@@ -39,20 +39,32 @@ stories:
       - intent: goodbye
       - action: utter_goodbye
 
-
-  - story: Enroll inquiry story
+  - story: Scholarship story (documentation first)
     steps:
-      - intent: inform_enrollment
-      - action: utter_inform_enrollment
-
-  - story: Scholarship inquiry story
-    steps:
+      - intent: greet
+      - action: utter_greet
       - intent: inform_scholarships
-      - action: utter_inform_scholarships
-
-  - story: Access requirements inquiry for higher level
-    steps:
-      - intent: inform_access_requirements
         entities:
-          - "level: higher"
-      - action: utter_inform_access_requirements
+          - scholarship_subject: "documentación"
+      - action: action_scholarship
+      - intent: inform_scholarships
+        entities:
+          - scholarship_subject: "plazo"
+      - action: action_scholarship
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: Scholarship story (deadline first)
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: inform_scholarships
+        entities:
+          - scholarship_subject: "plazo"
+      - action: action_scholarship
+      - intent: inform_scholarships
+        entities:
+          - scholarship_subject: "documentación"
+      - action: action_scholarship
+      - intent: goodbye
+      - action: utter_goodbye

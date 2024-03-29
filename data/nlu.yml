@@ -69,31 +69,13 @@ nlu:
       - ¿Qué opciones de estudio tengo en el instituto?
       - ¿Qué ciclos formativos puedo estudiar en el instituto?
 
-  - intent: inform_enrollment
-    examples: |
-      - ¿Cuándo empieza la [matrícula](course_year) para el curso 2024-25?
-      - ¿Qué documentos necesito para [matricularme](documentation_required)?
-      - ¿Cuál es el plazo de inscripción para el próximo curso?
-      - Me gustaría saber cuándo puedo matricularme.
-
   - intent: inform_scholarships
     examples: |
-      - ¿Cuál es el plazo para solicitar las [becas](application_deadline)?
-      - ¿Qué necesito para aplicar a una [beca](documentation_required)?
-      - Quiero información sobre las becas disponibles.
-      - ¿Hasta cuándo puedo solicitar una beca?
-
-
-  - intent: inform_access_requirements
-    examples: |
-      - ¿Qué documentos necesito para inscribirme en un ciclo formativo de grado [superior](level)?
-      - ¿Cuáles son los requisitos para el grado [medio](level)?
-      - Necesito saber los requisitos para matricularme.
-      - ¿Qué necesito para inscribirme?
-
-
-  - intent: inform_computer_science_offer
-    examples: |
-      - ¿Puedo estudiar programación en vuestro instituto? ¿Qué asignaturas incluye?
-      - Información sobre los estudios de informática disponibles.
-      - Quiero saber más sobre el programa de informática.
+      - ¿Cuándo se pide la beca? [plazo](scholarship_subject)
+      - ¿Cuál es el [plazo](scholarship_subject) para las becas?
+      - Dime la [documentos](scholarship_subject) necesaria para las becas.
+      - ¿Qué [documentos](scholarship_subject) necesito para solicitar la beca?
+      - ¿Hasta cuándo puedo solicitar la beca? [plazo](scholarship_subject)
+      - ¿Cuándo se cierra el [plazo](scholarship_subject) para solicitar la beca?
+      - ¿Qué [documentos](scholarship_subject) necesito para aplicar?
+      - ¿Cuándo termina el [plazo](scholarship_subject) para solicitar la beca?

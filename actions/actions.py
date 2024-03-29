@@ -5,10 +5,12 @@
 # https://rasa.com/docs/rasa/custom-actions
 
 
-from typing import Any, Text, Dict, List
-from rasa_sdk import Action, Tracker
-from rasa_sdk.executor import CollectingDispatcher
 import csv
+from typing import Any, Text, Dict, List
+
+from rasa_sdk import Action, Tracker
+from rasa_sdk.events import SlotSet
+from rasa_sdk.executor import CollectingDispatcher
 
 
 class ActionProfessionalFamilies(Action):
@@ -30,9 +32,7 @@ class ActionSchedule(Action):
     def name(self) -> Text:
         return "action_schedule"
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         turn = tracker.get_slot("turn")
         if turn == "mañana":
@@ -41,6 +41,26 @@ class ActionSchedule(Action):
             message = "Las clases de la tarde empiezan a las 16:00 y terminan a las 20:00."
         else:
             message = "Por favor, especifica si te interesan las clases de la mañana o de la tarde."
+
+        dispatcher.utter_message(text=message)
+        return []
+
+
+class ActionScholarship(Action):
+    def name(self) -> Text:
+        return "action_scholarship"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        subject = tracker.get_slot("scholarship_subject")
+
+        if subject == "documentos":
+            message = "Para la beca, necesitas tu DNI, certificado de notas, y el formulario de solicitud completado."
+        elif subject == "plazo":
+            message = "El plazo para solicitar becas termina el 30 de septiembre."
+        else:
+            message = ("Puedo proporcionarte información sobre la documentación necesaria y los plazos para las becas. "
+                       "¿Qué necesitas saber?")
 
         dispatcher.utter_message(text=message)
         return []
