@@ -1,91 +1,54 @@
-version: "3.1"
-
+version: "3.0"
 nlu:
-- intent: greet
-  examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+  - intent: inform_enrollment
+    examples: |
+      - ¿Cuándo empieza la [matrícula](course_year) para el curso 2024-25?
+      - ¿Qué documentos necesito para [matricularme](documentation_required)?
+      - ¿Cuál es el plazo de inscripción para el próximo curso?
+      - Me gustaría saber cuándo puedo matricularme.
 
-- intent: goodbye
-  examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+  - intent: inform_scholarships
+    examples: |
+      - ¿Cuál es el plazo para solicitar las [becas](application_deadline)?
+      - ¿Qué necesito para aplicar a una [beca](documentation_required)?
+      - Quiero información sobre las becas disponibles.
+      - ¿Hasta cuándo puedo solicitar una beca?
 
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+  - intent: inform_cancellation
+    examples: |
+      - ¿Hasta cuándo puedo [anular mi matrícula](cancellation_deadline)?
+      - ¿Cómo puedo renunciar a una convocatoria?
+      - Necesito información para cancelar mi inscripción.
+      - ¿Cuál es el último día para anular la inscripción?
 
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+  - intent: inform_certificates
+    examples: |
+      - ¿Cuándo puedo recoger mi [certificado de estudios](collection_period)?
+      - ¿Qué necesito para solicitar un [certificado académico](documentation_required)?
+      - Información sobre la recogida de certificados.
+      - ¿Dónde y cuándo recoger mi certificado?
 
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+  - intent: inform_class_schedule
+    examples: |
+      - ¿A qué hora son las clases por la [mañana](schedule_type)?
+      - ¿Cuál es el horario de clases por la [tarde](schedule_type)?
+      - Quiero saber el horario de las clases.
+      - ¿Cómo es el horario del turno de la mañana?
 
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+  - intent: inform_access_requirements
+    examples: |
+      - ¿Qué documentos necesito para inscribirme en un ciclo formativo de grado [superior](level)?
+      - ¿Cuáles son los requisitos para el grado [medio](level)?
+      - Necesito saber los requisitos para matricularme.
+      - ¿Qué necesito para inscribirme?
 
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+  - intent: inform_professional_families
+    examples: |
+      - ¿Qué familias profesionales hay en el instituto?
+      - Me gustaría saber más sobre las familias profesionales disponibles.
+
+  - intent: inform_computer_science_offer
+    examples: |
+      - ¿Puedo estudiar programación en vuestro instituto? ¿Qué asignaturas incluye?
+      - Información sobre los estudios de informática disponibles.
+      - Quiero saber más sobre el programa de informática.

@@ -1,30 +1,49 @@
 version: "3.1"
-
 stories:
 
-- story: happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - story: Enroll inquiry story
+    steps:
+      - intent: inform_enrollment
+      - action: utter_inform_enrollment
 
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+  - story: Scholarship inquiry story
+    steps:
+      - intent: inform_scholarships
+      - action: utter_inform_scholarships
 
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+  - story: Cancellation inquiry story
+    steps:
+      - intent: inform_cancellation
+      - action: utter_inform_cancellation
+
+  - story: Certificate collection inquiry story
+    steps:
+      - intent: inform_certificates
+      - action: utter_inform_certificates
+
+  - story: Class schedule inquiry morning
+    steps:
+      - intent: inform_class_schedule
+        entities:
+          - "schedule_type: morning"
+      - action: action_inform_class_schedule
+
+  - story: Class schedule inquiry afternoon
+    steps:
+      - intent: inform_class_schedule
+        entities:
+          - "schedule_type: afternoon"
+      - action: action_inform_class_schedule
+
+  - story: Access requirements inquiry for higher level
+    steps:
+      - intent: inform_access_requirements
+        entities:
+          - "level: higher"
+      - action: utter_inform_access_requirements
+
+  - story: Professional families inquiry story
+    steps:
+      - intent: inform_professional_families
+      - action: utter_inform_professional_families
+

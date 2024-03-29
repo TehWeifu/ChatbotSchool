@@ -1,3 +1,5 @@
 docs/
 models/
 venv/
+.idea/
+.rasa/
