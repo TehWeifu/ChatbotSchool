@@ -36,9 +36,9 @@ class ActionSchedule(Action):
 
         turn = tracker.get_slot("turn")
         if turn == "mañana":
-            message = "Las clases de la mañana empiezan a las 8:00 y terminan a las 12:00."
+            message = "Las clases de la mañana empiezan a las 8:00 y terminan a las 14:00."
         elif turn == "tarde":
-            message = "Las clases de la tarde empiezan a las 13:00 y terminan a las 17:00."
+            message = "Las clases de la tarde empiezan a las 16:00 y terminan a las 20:00."
         else:
             message = "Por favor, especifica si te interesan las clases de la mañana o de la tarde."
 
