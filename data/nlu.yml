@@ -50,29 +50,13 @@ nlu:
       - ¿Dónde puedo recoger mi certificado de estudios?
       - ¿Cuándo estarán disponibles los certificados?
 
-  - intent: inform_class_schedule_morning
+  - intent: inform_schedule
     examples: |
-      - ¿A qué hora son las clases de la mañana?
-      - ¿Cuál es el horario de las clases de la mañana?
-      - Quiero saber el horario de las clases de la mañana.
-      - ¿Cómo es el horario de las clases de la mañana?
-      - ¿Cuándo empiezan las clases de la mañana?
-      - ¿Cuándo terminan las clases de la mañana?
-      - ¿Cuál es el horario de clases por la mañana?
-      - ¿A qué hora empiezan las clases de la mañana?
-      - ¿A qué hora terminan las clases de la mañana?
-
-  - intent: inform_class_schedule_afternoon
-    examples: |
-      - ¿A qué hora son las clases de la tarde?
-      - ¿Cuál es el horario de las clases de la tarde?
-      - Quiero saber el horario de las clases de la tarde.
-      - ¿Cómo es el horario de las clases de la tarde?
-      - ¿Cuándo empiezan las clases de la tarde?
-      - ¿Cuándo terminan las clases de la tarde?
-      - ¿Cuál es el horario de clases por la tarde?
-      - ¿A qué hora empiezan las clases de la tarde?
-      - ¿A qué hora terminan las clases de la tarde?
+      - ¿Cuál es el horario de clases por la [mañana](turn)?
+      - ¿A qué hora empiezan las clases de la [tarde](turn)?
+      - ¿Cuándo terminan las clases de la [tarde](turn)?
+      - Dime los horarios de clases por la [mañana](turn).
+      - ¿Qué horario tienen las clases de la [tarde](turn)?
 
   - intent: inform_professional_families
     examples: |

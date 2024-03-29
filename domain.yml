@@ -5,9 +5,8 @@ intents:
   - goodbye
   - inform_cancellation
   - inform_certificates
-  - inform_class_schedule_morning
-  - inform_class_schedule_afternoon
   - inform_professional_families
+  - inform_schedule
   - inform_enrollment
   - inform_scholarships
   - inform_access_requirements
@@ -26,12 +25,6 @@ responses:
   utter_inform_certificates:
     - text: "Puedes recoger tu certificado de estudios a partir del 15 de julio en la secretaría. Necesitas traer tu DNI y el recibo de pago de la tasa de expedición del título."
 
-  utter_inform_class_schedule_morning:
-    - text: "El horario de clases por la mañana es de 8:00 a 14:00."
-
-  utter_inform_class_schedule_afternoon:
-    - text: "El horario de clases por la tarde es de 16:00 a 20:00."
-
   utter_inform_enrollment:
     - text: "La matrícula para el curso 2024-25 comienza el 1 de junio y necesitarás tu DNI y el formulario de inscripción completado."
 
@@ -46,6 +39,7 @@ responses:
 
 
 entities:
+  - turn
   - course_year
   - documentation_required
   - application_deadline
@@ -54,3 +48,12 @@ entities:
 
 actions:
   - action_professional_families
+  - action_schedule
+
+slots:
+  turn:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: turn
+    influence_conversation: true
