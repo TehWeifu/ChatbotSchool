@@ -1,5 +1,56 @@
-version: "3.0"
+version: "3.1"
 nlu:
+  - intent: greet
+    examples: |
+      - Hola
+      - Hey
+      - Buenos días
+      - Buenas tardes
+      - Buenas noches
+      - Buenas
+      - ¿Qué tal?
+
+  - intent: goodbye
+    examples: |
+      - Adiós
+      - Hasta luego
+      - Nos vemos
+      - Hasta la próxima
+      - Chao
+      - Hasta pronto
+      - Hasta mañana
+      - Hasta la vista
+      - Bye
+      - Gracias
+      - Gracias por la ayuda
+
+
+  - intent: inform_cancellation
+    examples: |
+      - ¿Cómo puedo renunciar una convocatoria?
+      - ¿Hasta cuándo puedo cancelar un examen?
+      - ¿Cuál es el plazo para anular la convocatoria?
+      - Necesito información para cancelar mi convocatoria.
+      - ¿Cuál es el último día para anular una convocatoria?
+      - ¿Cuáles son los plazos para renunciar a los exámenes?
+      - ¿Hasta cuándo puedo renunciar mi convocatoria?
+      - ¿Cuándo se cierra el plazo para cancelar las convocatorias?
+      - Quiero cancelar una convocatoria.
+      - Necesito anular un examen.
+
+  - intent: inform_certificates
+    examples: |
+      - ¿Cuándo puedo recoger mi certificado?
+      - Información sobre la recogida de certificados.
+      - ¿Dónde y cuándo recoger mi certificado?
+      - ¿Cuándo me dan el título?
+      - ¿Cuál es el plazo para recoger el certificado?
+      - ¿Cuándo puedo pasar a recoger mi certificado?
+      - ¿Cuanto tengo que esperar para recoger mi título?
+      - ¿Dónde puedo recoger mi certificado de estudios?
+      - ¿Cuándo estarán disponibles los certificados?
+
+
   - intent: inform_enrollment
     examples: |
       - ¿Cuándo empieza la [matrícula](course_year) para el curso 2024-25?
@@ -14,19 +65,6 @@ nlu:
       - Quiero información sobre las becas disponibles.
       - ¿Hasta cuándo puedo solicitar una beca?
 
-  - intent: inform_cancellation
-    examples: |
-      - ¿Hasta cuándo puedo [anular mi matrícula](cancellation_deadline)?
-      - ¿Cómo puedo renunciar a una convocatoria?
-      - Necesito información para cancelar mi inscripción.
-      - ¿Cuál es el último día para anular la inscripción?
-
-  - intent: inform_certificates
-    examples: |
-      - ¿Cuándo puedo recoger mi [certificado de estudios](collection_period)?
-      - ¿Qué necesito para solicitar un [certificado académico](documentation_required)?
-      - Información sobre la recogida de certificados.
-      - ¿Dónde y cuándo recoger mi certificado?
 
   - intent: inform_class_schedule
     examples: |

@@ -1,6 +1,8 @@
 version: "3.1"
 
 intents:
+  - greet
+  - goodbye
   - inform_enrollment
   - inform_scholarships
   - inform_cancellation
@@ -11,17 +13,23 @@ intents:
   - inform_computer_science_offer
 
 responses:
+  utter_greet:
+    - text: "¡Hola! ¿En qué puedo ayudarte?"
+
+  utter_goodbye:
+    - text: "¡Hasta luego! Que tengas un buen día."
+
+  utter_inform_cancellation:
+    - text: "Para renunciar a una convocatoria, debes hacerlo entre el 1 de enero y el 30 de mayo. Por favor, visita la secretaría la solicitud de renuncia para llevarla a cabo."
+
+  utter_inform_certificates:
+    - text: "Puedes recoger tu certificado de estudios a partir del 15 de julio en la secretaría. Necesitas traer tu DNI y el recibo de pago de la tasa de expedición del título."
+
   utter_inform_enrollment:
     - text: "La matrícula para el curso 2024-25 comienza el 1 de junio y necesitarás tu DNI y el formulario de inscripción completado."
 
   utter_inform_scholarships:
     - text: "Puedes solicitar becas hasta el 30 de septiembre. Necesitarás tu DNI, el comprobante de ingresos familiares y el formulario de solicitud de beca."
-
-  utter_inform_cancellation:
-    - text: "Para anular tu matrícula, debes hacerlo antes del 15 de julio. Por favor, visita la secretaría con tu DNI y el formulario de anulación."
-
-  utter_inform_certificates:
-    - text: "Puedes recoger tu certificado de estudios a partir del 15 de julio en la secretaría. No olvides traer tu DNI."
 
   utter_inform_class_schedule:
     - text: "El horario de clases por la mañana es de 9:00 a 14:00 y por la tarde de 16:00 a 20:00. Por favor, consulta el horario completo en la secretaría."
@@ -40,8 +48,6 @@ entities:
   - course_year
   - documentation_required
   - application_deadline
-  - cancellation_deadline
-  - collection_period
   - schedule_type
   - level
   - professional_family

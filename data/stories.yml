@@ -1,6 +1,24 @@
 version: "3.1"
 stories:
 
+  - story: Cancellation story
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: inform_cancellation
+      - action: utter_inform_cancellation
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: Certificate story
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: inform_certificates
+      - action: utter_inform_certificates
+      - intent: goodbye
+      - action: utter_goodbye
+
   - story: Enroll inquiry story
     steps:
       - intent: inform_enrollment
@@ -10,16 +28,6 @@ stories:
     steps:
       - intent: inform_scholarships
       - action: utter_inform_scholarships
-
-  - story: Cancellation inquiry story
-    steps:
-      - intent: inform_cancellation
-      - action: utter_inform_cancellation
-
-  - story: Certificate collection inquiry story
-    steps:
-      - intent: inform_certificates
-      - action: utter_inform_certificates
 
   - story: Class schedule inquiry morning
     steps:
