@@ -19,6 +19,35 @@ stories:
       - intent: goodbye
       - action: utter_goodbye
 
+  - story: Class schedule morning story
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: inform_class_schedule_morning
+      - action: utter_inform_class_schedule_morning
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: Class schedule afternoon story
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: inform_class_schedule_afternoon
+      - action: utter_inform_class_schedule_afternoon
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: Professional families inquiry story
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: inform_professional_families
+      - action: action_professional_families
+      - intent: goodbye
+      - action: utter_goodbye
+
+
+
   - story: Enroll inquiry story
     steps:
       - intent: inform_enrollment
@@ -29,19 +58,19 @@ stories:
       - intent: inform_scholarships
       - action: utter_inform_scholarships
 
-  - story: Class schedule inquiry morning
-    steps:
-      - intent: inform_class_schedule
-        entities:
-          - "schedule_type: morning"
-      - action: action_inform_class_schedule
-
-  - story: Class schedule inquiry afternoon
-    steps:
-      - intent: inform_class_schedule
-        entities:
-          - "schedule_type: afternoon"
-      - action: action_inform_class_schedule
+  #  - story: Class schedule inquiry morning
+  #    steps:
+  #      - intent: inform_class_schedule
+  #        entities:
+  #          - "schedule_type: morning"
+  #      - action: action_inform_class_schedule
+  #
+  #  - story: Class schedule inquiry afternoon
+  #    steps:
+  #      - intent: inform_class_schedule
+  #        entities:
+  #          - "schedule_type: afternoon"
+  #      - action: action_inform_class_schedule
 
   - story: Access requirements inquiry for higher level
     steps:
@@ -50,8 +79,4 @@ stories:
           - "level: higher"
       - action: utter_inform_access_requirements
 
-  - story: Professional families inquiry story
-    steps:
-      - intent: inform_professional_families
-      - action: utter_inform_professional_families
 

@@ -50,6 +50,40 @@ nlu:
       - ¿Dónde puedo recoger mi certificado de estudios?
       - ¿Cuándo estarán disponibles los certificados?
 
+  - intent: inform_class_schedule_morning
+    examples: |
+      - ¿A qué hora son las clases de la mañana?
+      - ¿Cuál es el horario de las clases de la mañana?
+      - Quiero saber el horario de las clases de la mañana.
+      - ¿Cómo es el horario de las clases de la mañana?
+      - ¿Cuándo empiezan las clases de la mañana?
+      - ¿Cuándo terminan las clases de la mañana?
+      - ¿Cuál es el horario de clases por la mañana?
+      - ¿A qué hora empiezan las clases de la mañana?
+      - ¿A qué hora terminan las clases de la mañana?
+
+  - intent: inform_class_schedule_afternoon
+    examples: |
+      - ¿A qué hora son las clases de la tarde?
+      - ¿Cuál es el horario de las clases de la tarde?
+      - Quiero saber el horario de las clases de la tarde.
+      - ¿Cómo es el horario de las clases de la tarde?
+      - ¿Cuándo empiezan las clases de la tarde?
+      - ¿Cuándo terminan las clases de la tarde?
+      - ¿Cuál es el horario de clases por la tarde?
+      - ¿A qué hora empiezan las clases de la tarde?
+      - ¿A qué hora terminan las clases de la tarde?
+
+  - intent: inform_professional_families
+    examples: |
+      - ¿Qué familias profesionales hay en el instituto?
+      - ¿Qué ciclos formativos ofrecéis?
+      - ¿Qué puedo estudiar?
+      - ¿Cuáles son las familias profesionales disponibles?
+      - ¿Qué estudios puedo cursar en el instituto?
+      - Me gustaría saber más sobre las familias profesionales disponibles.
+      - ¿Qué opciones de estudio tengo en el instituto?
+      - ¿Qué ciclos formativos puedo estudiar en el instituto?
 
   - intent: inform_enrollment
     examples: |
@@ -66,13 +100,6 @@ nlu:
       - ¿Hasta cuándo puedo solicitar una beca?
 
 
-  - intent: inform_class_schedule
-    examples: |
-      - ¿A qué hora son las clases por la [mañana](schedule_type)?
-      - ¿Cuál es el horario de clases por la [tarde](schedule_type)?
-      - Quiero saber el horario de las clases.
-      - ¿Cómo es el horario del turno de la mañana?
-
   - intent: inform_access_requirements
     examples: |
       - ¿Qué documentos necesito para inscribirme en un ciclo formativo de grado [superior](level)?
@@ -80,10 +107,6 @@ nlu:
       - Necesito saber los requisitos para matricularme.
       - ¿Qué necesito para inscribirme?
 
-  - intent: inform_professional_families
-    examples: |
-      - ¿Qué familias profesionales hay en el instituto?
-      - Me gustaría saber más sobre las familias profesionales disponibles.
 
   - intent: inform_computer_science_offer
     examples: |

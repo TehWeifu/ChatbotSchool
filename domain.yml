@@ -3,13 +3,14 @@ version: "3.1"
 intents:
   - greet
   - goodbye
-  - inform_enrollment
-  - inform_scholarships
   - inform_cancellation
   - inform_certificates
-  - inform_class_schedule
-  - inform_access_requirements
+  - inform_class_schedule_morning
+  - inform_class_schedule_afternoon
   - inform_professional_families
+  - inform_enrollment
+  - inform_scholarships
+  - inform_access_requirements
   - inform_computer_science_offer
 
 responses:
@@ -25,20 +26,20 @@ responses:
   utter_inform_certificates:
     - text: "Puedes recoger tu certificado de estudios a partir del 15 de julio en la secretaría. Necesitas traer tu DNI y el recibo de pago de la tasa de expedición del título."
 
+  utter_inform_class_schedule_morning:
+    - text: "El horario de clases por la mañana es de 8:00 a 14:00."
+
+  utter_inform_class_schedule_afternoon:
+    - text: "El horario de clases por la tarde es de 16:00 a 20:00."
+
   utter_inform_enrollment:
     - text: "La matrícula para el curso 2024-25 comienza el 1 de junio y necesitarás tu DNI y el formulario de inscripción completado."
 
   utter_inform_scholarships:
     - text: "Puedes solicitar becas hasta el 30 de septiembre. Necesitarás tu DNI, el comprobante de ingresos familiares y el formulario de solicitud de beca."
 
-  utter_inform_class_schedule:
-    - text: "El horario de clases por la mañana es de 9:00 a 14:00 y por la tarde de 16:00 a 20:00. Por favor, consulta el horario completo en la secretaría."
-
   utter_inform_access_requirements:
     - text: "Para inscribirte en un ciclo formativo de grado superior, necesitarás tu DNI, el título de bachillerato y el formulario de inscripción."
-
-  utter_inform_professional_families:
-    - text: "En nuestro instituto ofrecemos las familias profesionales de Administración y Gestión, Informática y Comunicaciones, y Hostelería y Turismo."
 
   utter_inform_computer_science_offer:
     - text: "En nuestro instituto ofrecemos un ciclo formativo de grado superior en Desarrollo de Aplicaciones Multiplataforma. Incluye asignaturas como Programación, Bases de Datos y Sistemas Informáticos."
@@ -48,9 +49,8 @@ entities:
   - course_year
   - documentation_required
   - application_deadline
-  - schedule_type
   - level
   - professional_family
 
 actions:
-  - action_inform_class_schedule
+  - action_professional_families

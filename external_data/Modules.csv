@@ -1,0 +1,95 @@
+Cod_Modulo;Nom_Cas_Modulo;HORAS;Grupo
+5024;Análisis forense informático;120;1CESCIB
+5026;Normativa de ciberseguridad;30;1CESCIB
+5021;Incidentes de ciberseguridad;120;1CESCIB
+5023;Puesta en producción segura;120;1CESCIB
+5025;Hacking ético;120;1CESCIB
+5022;Bastionado de redes y sistemas;210;1CESCIB
+5075;Big Data aplicado;120;1CESIAB
+5072;Sistemas de aprendizaje automático;90;1CESIAB
+5074;Sistemas de Big Data;90;1CESIAB
+5071;Modelos de Inteligencia Artificial;90;1CESIAB
+5073;Programación de Inteligencia Artificial;210;1CESIAB
+TU01CF;Tutoría Primero;32;1CFMC
+CV0001;Inglés Técnico I-M / Horario reservado para la docencia en inglés;64;1CFMC
+0225;Redes locales;224;1CFMC
+0223;Aplicaciones ofimáticas;224;1CFMC
+0221;Montaje y mantenimiento de equipos;224;1CFMC
+0229;Formación y orientación laboral;96;1CFMC
+0222;Sistemas operativos monopuesto;128;1CFMC
+0221;Montaje y mantenimiento de equipos;224;1CFMD
+0229;Formación y orientación laboral;96;1CFMD
+0222;Sistemas operativos monopuesto;128;1CFMD
+TU01CF;Tutoría Primero;32;1CFMD
+CV0001;Inglés Técnico I-M / Horario reservado para la docencia en inglés;64;1CFMD
+0225;Redes locales;224;1CFMD
+0223;Aplicaciones ofimáticas;224;1CFMD
+0369;Implantación de Sistemas Operativos;224;1CFSC
+TU01CF;Tutoría Primero;32;1CFSC
+0370;Planificación y Administración de Redes;192;1CFSC
+0371;Fundamentos de Hardware;96;1CFSC
+0380;Formación y orientación laboral;96;1CFSC
+CV0003;Inglés Técnico I-S / Horario reservado para la docencia en inglés;96;1CFSC
+0373;Lenguajes de marcas y sistemas de gestión de información;96;1CFSC
+0372;Gestión de Bases de Datos;160;1CFSC
+0485;Programación;256;1CFSH
+0484;Bases de Datos;160;1CFSH
+0483;Sistemas informáticos;160;1CFSH
+0617;Formación y orientación laboral;96;1CFSH
+TU01CF;Tutoría Primero;32;1CFSH
+CV0003;Inglés Técnico I-S / Horario reservado para la docencia en inglés;96;1CFSH
+0373;Lenguajes de marcas y sistemas de gestión de información;96;1CFSH
+0487;Entornos de desarrollo;96;1CFSH
+TU01CF;Tutoría Primero;32;1CFSL
+CV0003;Inglés Técnico I-S / Horario reservado para la docencia en inglés;96;1CFSL
+0373;Lenguajes de marcas y sistemas de gestión de información;96;1CFSL
+0487;Entornos de desarrollo;96;1CFSL
+0485;Programación;256;1CFSL
+0484;Bases de Datos;160;1CFSL
+0483;Sistemas informáticos;160;1CFSL
+0617;Formación y orientación laboral;96;1CFSL
+0224;Sistemas operativos en red;176;2CFMC
+0231;Formación en Centros de Trabajo;380;2CFMC
+0227;Servicios en red;176;2CFMC
+TU02CF;Tutoría Segundo;32;2CFMC
+CV0002;Inglés Técnico II-M / Horario reservado para la docencia en inglés;44;2CFMC
+0230;Empresa e iniciativa emprendedora;66;2CFMC
+0228;Aplicaciones web;88;2CFMC
+0226;Seguridad informática;110;2CFMC
+TU02CF;Tutoría Segundo;32;2CFMH
+CV0002;Inglés Técnico II-M / Horario reservado para la docencia en inglés;44;2CFMH
+0230;Empresa e iniciativa emprendedora;66;2CFMH
+0228;Aplicaciones web;88;2CFMH
+0226;Seguridad informática;110;2CFMH
+0224;Sistemas operativos en red;176;2CFMH
+0231;Formación en Centros de Trabajo;380;2CFMH
+0227;Servicios en red;176;2CFMH
+0382;Formación en Centros de Trabajo;400;2CFSC
+0376;Implantación de Aplicaciones Web;100;2CFSC
+CV0004;Inglés Técnico II-S / Horario reservado para la docencia en inglés;40;2CFSC
+0379;Proyecto de Administración de Sistemas Informáticos en Red;40;2CFSC
+0375;Servicios de Red e Internet;120;2CFSC
+0377;Administración de Sistemas Gestores de Bases de Datos;60;2CFSC
+TU02CF;Tutoría Segundo;32;2CFSC
+0374;Administración de Sistemas Operativos;120;2CFSC
+0381;Empresa e Iniciativa emprendedora;60;2CFSC
+0378;Seguridad y Alta Disponibilidad;100;2CFSC
+CV0004;Inglés Técnico II-S / Horario reservado para la docencia en inglés;40;2CFSH
+0616;Proyecto de desarrollo de aplicaciones WEB;40;2CFSH
+0615;Diseño de interfaces WEB;120;2CFSH
+0613;Desarrollo WEB en entorno servidor;160;2CFSH
+TU02CF;Tutoría Segundo;32;2CFSH
+0619;Formación en centros de trabajo;400;2CFSH
+0618;Empresa e iniciativa emprendedora;60;2CFSH
+0614;Despliegue de aplicaciones WEB;80;2CFSH
+0612;Desarrollo WEB en entorno cliente;140;2CFSH
+0488;Desarrollo de interfaces;120;2CFSN
+CV0004;Inglés Técnico II-S / Horario reservado para la docencia en inglés;40;2CFSN
+0492;Proyecto de desarrollo de aplicaciones multiplataforma;40;2CFSN
+0491;Sistemas de gestión empresarial;100;2CFSN
+0489;Programación multimedia y dispositivos móviles;100;2CFSN
+TU02CF;Tutoría Segundo;32;2CFSN
+0486;Acceso a datos;120;2CFSN
+0495;Formación en centros de trabajo;400;2CFSN
+0494;Empresa e iniciativa emprendedora;60;2CFSN
+0490;Programación de servicios y procesos;60;2CFSN
