@@ -79,3 +79,14 @@ nlu:
       - ¿Cuándo se cierra el [plazo](scholarship_subject) para solicitar la beca?
       - ¿Qué [documentos](scholarship_subject) necesito para aplicar?
       - ¿Cuándo termina el [plazo](scholarship_subject) para solicitar la beca?
+
+  - intent: inform_enrollment
+    examples: |
+      - ¿Qué [documentos](subject) necesito para inscribirme?
+      - ¿Cuál es el [plazo](subject) de inscripción?
+      - ¿Cómo me puedo matricular? [documentos](subject)
+      - ¿Hasta cuando hay de [plazo](subject) para apuntarme?
+      - Necesito saber los [documentos](subject) para la matrícula.
+      - ¿Cuándo se cierra el [plazo](subject) de inscripción?
+      - ¿Cuándo se abre el [plazo](subject) para apuntarse?
+      - ¿Qué día empieza la matrícula? [plazo](subject)

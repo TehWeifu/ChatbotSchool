@@ -64,3 +64,28 @@ class ActionScholarship(Action):
 
         dispatcher.utter_message(text=message)
         return []
+
+
+class ActionEnrollment(Action):
+    def name(self) -> Text:
+        return "action_enrollment"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        subject = tracker.get_slot("enrollment_subject")
+
+        if subject == "documentos":
+            message = ("Para inscribirte, necesitas tu DNI, el certificado de estudios anteriores, y el formulario de "
+                       "inscripción completado.")
+            follow_up = "deadline"
+        elif subject == "plazo":
+            message = "El plazo de inscripción para nuevos estudiantes termina el 30 de julio."
+            follow_up = "documentation"
+        else:
+            message = ("Puedo proporcionarte información sobre la documentación necesaria y los plazos para la "
+                       "inscripción. ¿Qué necesitas saber?")
+            follow_up = None
+
+        dispatcher.utter_message(text=message)
+
+        return [SlotSet("enrollment_subject", follow_up)] if follow_up else []

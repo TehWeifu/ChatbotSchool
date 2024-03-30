@@ -68,3 +68,18 @@ stories:
       - action: action_scholarship
       - intent: goodbye
       - action: utter_goodbye
+
+  - story: Enrollment story
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: inform_enrollment
+        entities:
+          - subject: "documentación"
+      - action: action_enrollment
+      - intent: inform_enrollment
+        entities:
+          - subject: "plazo"
+      - action: action_enrollment
+      - intent: goodbye
+      - action: utter_goodbye
