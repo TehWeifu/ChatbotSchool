@@ -3,6 +3,7 @@ version: "3.1"
 intents:
   - greet
   - goodbye
+  - nlu_fallback
   - inform_cancellation
   - inform_certificates
   - inform_professional_families
@@ -23,6 +24,11 @@ responses:
   utter_inform_certificates:
     - text: "Puedes recoger tu certificado de estudios a partir del 15 de julio en la secretaría. Necesitas traer tu DNI y el recibo de pago de la tasa de expedición del título."
 
+  utter_repeat_prompt:
+    - text: "Lo siento, no entendí tu pregunta. ¿Podrías repetirlo?"
+
+  utter_default:
+    - text: "Lo siento, no tengo información sobre eso. ¿Puedo ayudarte con algo más?"
 
 entities:
   - turn
