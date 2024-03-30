@@ -34,7 +34,8 @@ class ActionSchedule(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        turn = tracker.get_slot("turn")
+        turn = next(tracker.get_latest_entity_values("turn"), None)
+
         if turn == "mañana":
             message = "Las clases de la mañana empiezan a las 8:00 y terminan a las 14:00."
         elif turn == "tarde":
@@ -52,7 +53,7 @@ class ActionScholarship(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        subject = tracker.get_slot("scholarship_subject")
+        subject = next(tracker.get_latest_entity_values("scholarship_subject"), None)
 
         if subject == "documentos":
             message = "Para la beca, necesitas tu DNI, certificado de notas, y el formulario de solicitud completado."
@@ -72,7 +73,7 @@ class ActionEnrollment(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        subject = tracker.get_slot("enrollment_subject")
+        subject = next(tracker.get_latest_entity_values("enrollment_subject"), None)
 
         if subject == "documentos":
             message = ("Para inscribirte, necesitas tu DNI, el certificado de estudios anteriores, y el formulario de "
