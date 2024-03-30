@@ -10,6 +10,7 @@ intents:
   - inform_schedule
   - inform_scholarships
   - inform_enrollment
+  - inform_access_requirements
 
 responses:
   utter_greet:
@@ -34,12 +35,14 @@ entities:
   - turn
   - scholarship_subject
   - enrollment_subject
+  - education_level
 
 actions:
   - action_professional_families
   - action_schedule
   - action_scholarship
   - action_enrollment
+  - action_access_requirements
 
 slots:
   turn:
@@ -59,4 +62,10 @@ slots:
     mappings:
       - type: from_entity
         entity: enrollment_subject
+    influence_conversation: true
+  education_level:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: education_level
     influence_conversation: true

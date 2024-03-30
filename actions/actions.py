@@ -89,3 +89,24 @@ class ActionEnrollment(Action):
         dispatcher.utter_message(text=message)
 
         return [SlotSet("enrollment_subject", follow_up)] if follow_up else []
+
+
+class ActionProvideAccessRequirements(Action):
+    def name(self) -> Text:
+        return "action_access_requirements"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        education_level = next(tracker.get_latest_entity_values("education_level"), None)
+
+        if education_level == "Grado Medio":
+            message = ("Para acceder a Grado Medio necesitas tener el título de ESO o haber superado la prueba de "
+                       "acceso.")
+        elif education_level == "Grado Superior":
+            message = "Para Grado Superior es necesario tener el título de Bachillerato o superar la prueba de acceso."
+        else:
+            message = ("Puedo informarte sobre los requisitos de acceso para Grado Medio y Grado Superior. ¿Cuál te "
+                       "interesa?")
+
+        dispatcher.utter_message(text=message)
+        return []

@@ -90,3 +90,14 @@ nlu:
       - ¿Cuándo se cierra el [plazo](subject) de inscripción?
       - ¿Cuándo se abre el [plazo](subject) para apuntarse?
       - ¿Qué día empieza la matrícula? [plazo](subject)
+
+  - intent: inform_access_requirements
+    examples: |
+      - ¿Cuáles son los requisitos de acceso para [Grado Medio](education_level)?
+      - Quiero saber sobre la admisión a [Grado Superior](education_level).
+      - ¿Qué necesito para inscribirme en [Grado Medio](education_level)?
+      - Dime los requisitos para [Grado Superior](education_level).
+      - ¿Qué necesito para acceder a [Grado Medio](education_level)?
+      - ¿Cuáles son los requisitos de acceso para [Grado Superior](education_level)?
+      - Dime cómo puedo acceder a [Grado Medio](education_level).
+      - Quiero inscribirme en [Grado Superior](education_level).

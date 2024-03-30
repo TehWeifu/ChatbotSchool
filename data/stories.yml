@@ -83,3 +83,25 @@ stories:
       - action: action_enrollment
       - intent: goodbye
       - action: utter_goodbye
+
+  - story: Access requirements for 'grado medio'
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: inform_access_requirements
+        entities:
+          - education_level: "Grado Medio"
+      - action: action_access_requirements
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: Access requirements for 'grado superior'
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: inform_access_requirements
+        entities:
+          - education_level: "Grado Superior"
+      - action: action_access_requirements
+      - intent: goodbye
+      - action: utter_goodbye
