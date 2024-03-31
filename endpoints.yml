@@ -26,11 +26,12 @@ action_endpoint:
 #    use_ssl: <whether or not the communication is encrypted, default false>
 
 #tracker_store:
-#    type: mongod
-#    url: <url to your mongo instance, e.g. mongodb://localhost:27017>
-#    db: <name of the db within your mongo instance, e.g. rasa>
-#    username: <username used for authentication>
-#    password: <password used for authentication>
+#  type: mongod
+#  url: mongodb+srv://rasa:Qwe_1234@mycluster.xkgnpk7.mongodb.net/?retryWrites=true&w=majority&appName=MyCluster
+#  db: rasa
+#  username: rasa
+#  password: Qwe_1234
+#  collection: conversations
 
 # Event broker which all conversation events should be streamed to.
 # https://rasa.com/docs/rasa/event-brokers
