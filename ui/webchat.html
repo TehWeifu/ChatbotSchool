@@ -7,6 +7,7 @@
     <style>
         body {
             background-color: lightpink;
+            font-family: Arial, sans-serif;
         }
 
         #chat-container {
@@ -37,6 +38,9 @@
         button {
             padding: 5px;
         }
+        p.rasa {
+            color: dodgerblue;
+        }
     </style>
 </head>
 <body>
@@ -52,7 +56,7 @@
         const userMessage = document.getElementById('user-message').value;
         const chatDisplay = document.getElementById('chat-display');
         // Mostrar el mensaje del usuario en el chat display
-        chatDisplay.innerHTML += '<p><strong>Tú:</strong> ' + userMessage + '</p>';
+        chatDisplay.innerHTML += '<p class="user"><strong>Tú:</strong> ' + userMessage + '</p>';
         // Enviar mensaje al servidor de Rasa y obtener la respuesta
         fetch('http://localhost:5005/webhooks/rest/webhook', {
             method: 'POST',
@@ -64,7 +68,7 @@
             .then(response => response.json())
             .then(data => {
                 // Mostrar la respuesta de Rasa en el chat display
-                chatDisplay.innerHTML += '<p><strong>Chatbot:</strong> ' + data[0].text + '</p>';
+                chatDisplay.innerHTML += '<p class="rasa"><strong>Chatbot:</strong> ' + data[0].text + '</p>';
             });
         // Limpiar el input de usuario
         document.getElementById('user-message').value = '';
