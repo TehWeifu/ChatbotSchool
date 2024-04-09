@@ -50,18 +50,25 @@
 
         p.rasa {
             color: #4054B2;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
 <div id="chat-container">
     <div id="chat-display"></div>
-    <div id="user-input">
-        <input type="text" id="user-message" placeholder="Escribe tu mensaje...">
-        <button onclick="sendMessage()">Enviar</button>
-    </div>
+    <form id="user-input">
+        <label for="user-message"></label><input type="text" id="user-message" placeholder="Escribe tu mensaje...">
+        <input type="submit" value="Enviar">
+    </form>
 </div>
 <script>
+
+    document.getElementById('user-input').addEventListener('submit', function (event) {
+        event.preventDefault();
+        sendMessage();
+    });
+
     function sendMessage() {
         const userMessage = document.getElementById('user-message').value;
         const chatDisplay = document.getElementById('chat-display');
