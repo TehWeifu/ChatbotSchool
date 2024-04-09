@@ -1,6 +1,9 @@
 from pymongo import MongoClient
+from tabulate import tabulate
 
-uri = "mongodb+srv://rasa:Qwe_1234@mycluster.xkgnpk7.mongodb.net/?retryWrites=true&w=majority&appName=MyCluster"
+from cfg.mongo_cfg import *
+
+uri = f"mongodb+srv://{MONGO_USER}:{MONGO_PASSWORD}@mycluster.xkgnpk7.mongodb.net/?retryWrites=true&w=majority&appName=MyCluster"
 client = MongoClient(uri)
 db = client.rasa
 conversations = db.conversations
@@ -13,5 +16,8 @@ pipeline = [
 ]
 
 results = conversations.aggregate(pipeline)
-for result in results:
-    print(result)
+
+print("Most common intents")
+print(tabulate(results, headers="keys", tablefmt="pretty"))
+
+client.close()
