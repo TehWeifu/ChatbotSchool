@@ -4,4 +4,4 @@ venv/
 .idea/
 .rasa/
 story_graph.dot
-cfg/
+.env

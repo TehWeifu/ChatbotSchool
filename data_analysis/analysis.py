@@ -1,9 +1,12 @@
+import os
+
 from pymongo import MongoClient
 from tabulate import tabulate
 
-from cfg.mongo_cfg import *
+mongo_user = os.getenv("MONGO_USER")
+mongo_password = os.getenv("MONGO_PASSWORD")
 
-uri = f"mongodb+srv://{MONGO_USER}:{MONGO_PASSWORD}@mycluster.xkgnpk7.mongodb.net/?retryWrites=true&w=majority&appName=MyCluster"
+uri = f"mongodb+srv://{mongo_user}:{mongo_password}@mycluster.xkgnpk7.mongodb.net/?retryWrites=true&w=majority&appName=MyCluster"
 client = MongoClient(uri)
 db = client.rasa
 conversations = db.conversations
