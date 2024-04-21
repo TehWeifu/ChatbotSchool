@@ -16,7 +16,7 @@ MONGO_PASSWORD = os.getenv("MONGO_PASSWORD")
 TOPIC_COUNT = 3
 RANDOM_STATE = 2055
 STOP_WORDS = set(stopwords.words('spanish'))
-nlp = spacy.load("es_core_news_md")
+nlp = spacy.load("es_core_news_lg")
 
 
 def remove_stop_words(sentence):

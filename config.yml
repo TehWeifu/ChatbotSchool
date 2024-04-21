@@ -12,7 +12,7 @@ language: es
 
 pipeline:
   - name: SpacyNLP
-    model: es_core_news_md
+    model: es_core_news_lg
   - name: SpacyTokenizer
   - name: SpacyFeaturizer
   - name: RegexFeaturizer

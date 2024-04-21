@@ -146,3 +146,58 @@ nlu:
       - ¿Cuál es el horario de secretaría?
       - ¿Cuál es el horario de apertura?
       - ¿Cuál es el horario de cierre?
+
+
+  - intent: affirm
+    examples: |
+      - Sí
+      - Claro
+      - Por supuesto
+      - Vale
+      - Correcto
+
+  - intent: deny
+    examples: |
+      - No
+      - No, gracias
+      - No, no es necesario
+      - No, no lo necesito
+      - No, no me interesa
+
+  - intent: stop_it_form
+    examples: |
+      - Sí, paramos
+      - Sí, detenemos
+      - Sí, cancelamos
+      - Sí, parate
+
+  - intent: repeat_it_module
+    examples: |
+      - Repite el módulo
+      - Repite el módulo de informática
+      - Repite el módulo por favor
+      - Repite el módulo de informática por favor
+      - Repite el módulo de informática otra vez
+      - Repite el módulo otra vez
+      - Repite el módulo de informática de nuevo
+      - Repite el módulo de nuevo
+      - Repite el módulo de informática otra vez por favor
+      - Repite el módulo otra vez por favor
+      - Repite el módulo de informática de nuevo por favor
+      - Repite el módulo de nuevo por favor
+      - ¿Qué módulo era?
+      - ¿Cuál era el módulo?
+      - ¿Cuál era el módulo de informática?
+
+  - intent: inform_it_module
+    examples: |
+      - ¿Qué módulos de informática tenéis?
+      - ¿Cuál es el módulo de informática?
+      - ¿Qué módulos de informática ofrecéis?
+      - ¿Cuál es el módulo de informática que imparten?
+      - ¿Qué módulos de informática hay disponibles?
+      - ¿Cuál es el módulo de informática que se estudia?
+      - Quiero estudiar informática
+      - Quiero aprender informática
+      - Quiero aprender a programar
+      - Quiero estudiar programación

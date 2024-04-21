@@ -105,3 +105,39 @@ stories:
       - action: action_access_requirements
       - intent: goodbye
       - action: utter_goodbye
+
+  - story: It module story
+    steps:
+      - intent: inform_it_module
+      - action: it_form
+      - active_loop: it_form
+      - slot_was_set:
+          - requested_slot: it_module
+      - slot_was_set:
+          - it_module: "DAW"
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: utter_ask_it_module
+      - intent: repeat_it_module
+      - action: action_give_it_module
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: It module interruption
+    steps:
+      - intent: inform_it_module
+      - action: it_form
+      - active_loop: it_form
+      - slot_was_set:
+          - requested_slot: it_module
+      - intent: stop_it_form
+      - action: utter_continue_it_form
+      - or:
+          - intent: affirm
+          - intent: deny
+      - action: action_deactivate_loop
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: utter_goodbye

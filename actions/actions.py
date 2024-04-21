@@ -111,3 +111,22 @@ class ActionProvideAccessRequirements(Action):
 
         dispatcher.utter_message(text=message)
         return []
+
+
+class ActionGiveItModule(Action):
+    def name(self) -> Text:
+        return "action_give_it_module"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        module = next(tracker.get_latest_entity_values("it_module"), None)
+
+        if module in ["programación", "informática"]:
+            message = "El módulo de programación se imparte en el primer curso de Grado Superior de Desarrollo de Aplicaciones Multiplataforma."
+        elif module in ["electricidad", "electrónica"]:
+            message = "El módulo de electricidad se imparte en el primer curso de Grado Medio de Instalaciones Eléctricas y Automáticas."
+        else:
+            message = "No tengo información sobre ese módulo. ¿Te interesa algún otro?"
+
+        dispatcher.utter_message(text=message)
+        return []

@@ -1,6 +1,7 @@
 version: "3.1"
 
 rules:
+
   - rule: Fallback rule
     steps:
       - intent: nlu_fallback
@@ -10,3 +11,34 @@ rules:
     steps:
       - intent: out_of_scope
       - action: utter_out_of_scope
+
+  - rule: Activate it_form
+    steps:
+      - intent: inform_it_module
+      - action: it_form
+      - active_loop: it_form
+
+  # It form interruption rules
+  - rule: It form interruption with greet
+    condition:
+      - active_loop: it_form
+    steps:
+      - intent: greet
+      - action: utter_default
+      - active_loop: it_form
+
+  - rule: It form interruption with scholarship
+    condition:
+      - active_loop: it_form
+    steps:
+      - intent: inform_scholarships
+      - action: utter_default
+      - active_loop: it_form
+
+  - rule: It form interruption with enrollment
+    condition:
+      - active_loop: it_form
+    steps:
+      - intent: inform_enrollment
+      - action: utter_default
+      - active_loop: it_form

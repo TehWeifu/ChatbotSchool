@@ -1,6 +1,6 @@
 # CIPFP Mislata Chatbot
 
-Chatbot for the CIPFP Mislata. This project is based on RASA and uses the Spanish model `es_core_news_md` from spaCy.
+Chatbot for the CIPFP Mislata. This project is based on RASA and uses the Spanish model `es_core_news_lg` from spaCy.
 Developed by [JulianBSL](https://github.com/TehWeifu) for MIA 2024.
 
 ## Installation (local Windows development)
@@ -8,7 +8,7 @@ Developed by [JulianBSL](https://github.com/TehWeifu) for MIA 2024.
 1. Install Python 3.9.13
 2. (Optional) Create a virtual environment and activate it
 3. Install the required packages `pip install -r requirements.txt`
-4. Download the Spanish model `es_core_news_md` with `python -m spacy download es_core_news_md`
+4. Download the Spanish model `es_core_news_lg` with `python -m spacy download es_core_news_lg`
 5. Train the model (not tracked in VCS) with `rasa train`
 
 ## Deployment to AWS

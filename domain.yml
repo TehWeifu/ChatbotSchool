@@ -11,6 +11,11 @@ intents:
   - inform_scholarships
   - inform_enrollment
   - inform_access_requirements
+  - stop_it_form
+  - affirm
+  - deny
+  - inform_it_module
+  - repeat_it_module
 
 responses:
   utter_greet:
@@ -28,11 +33,21 @@ responses:
   utter_repeat_prompt:
     - text: "Lo siento, no entendí tu pregunta. ¿Podrías repetirlo?"
 
+  utter_ask_it_module:
+    - text: "¿De qué módulo de informática necesitas información?"
+
   utter_default:
     - text: "Lo siento, no he comprendido tu mensaje. ¿Podrías repetirlo?"
 
   utter_out_of_scope:
     - text: "Lo siento, no tengo información sobre eso. ¿Puedo ayudarte con algo más?"
+
+  utter_continue_it_form:
+    - text: "¿Paramos la consulta del módulo de informática?"
+
+  utter_submit_it_form:
+    - text: "¡De acuerdo, apuntado!"
+
 
 entities:
   - turn
@@ -46,29 +61,43 @@ actions:
   - action_scholarship
   - action_enrollment
   - action_access_requirements
+  - action_give_it_module
+
+forms:
+  it_form:
+    required_slots:
+      - it_module
 
 slots:
   turn:
     type: text
+    influence_conversation: true
     mappings:
       - type: from_entity
         entity: turn
-    influence_conversation: true
   scholarship_subject:
     type: text
+    influence_conversation: true
     mappings:
       - type: from_entity
         entity: scholarship_subject
-    influence_conversation: true
   enrollment_subject:
     type: text
+    influence_conversation: true
     mappings:
       - type: from_entity
         entity: enrollment_subject
-    influence_conversation: true
   education_level:
     type: text
+    influence_conversation: true
     mappings:
       - type: from_entity
         entity: education_level
+  it_module:
+    type: text
     influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: it_module
+        conditions:
+          - active_loop: it_form
