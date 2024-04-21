@@ -54,8 +54,14 @@ Configs:
 
 RASA:
 
+* Initialize project: `rasa init`
 * Shell: `rasa shell`
 * Interactive training: `rasa interactive`
 * Train the model: `rasa train`
 * Start the action server: `rasa run actions`
 * Launch RASA server: `rasa run -m models --enable-api --cors "*" --debug`
+
+Apache:
+
+* Start server: `sudo systemctl start httpd`
+* Enable server:  `sudo systemctl enable httpd`  

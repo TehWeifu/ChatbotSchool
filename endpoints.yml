@@ -25,13 +25,13 @@ action_endpoint:
 #    password: <password used for authentication>
 #    use_ssl: <whether or not the communication is encrypted, default false>
 
-#tracker_store:
-#  type: mongod
-#  url: mongodb+srv://rasa:Qwe_1234@mycluster.xkgnpk7.mongodb.net/?retryWrites=true&w=majority&appName=MyCluster
-#  db: rasa
-#  username: rasa
-#  password: Qwe_1234
-#  collection: conversations
+tracker_store:
+  type: mongod
+  url: mongodb+srv://rasa:Qwe_1234@mycluster.xkgnpk7.mongodb.net/?retryWrites=true&w=majority&appName=MyCluster
+  db: rasa
+  username: rasa
+  password: Qwe_1234
+  collection: conversations
 
 # Event broker which all conversation events should be streamed to.
 # https://rasa.com/docs/rasa/event-brokers
