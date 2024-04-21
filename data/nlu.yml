@@ -57,6 +57,11 @@ nlu:
       - Dime los horarios de clases por la [mañana](turn).
       - ¿Qué horario tienen las clases de la [tarde](turn)?
 
+  - lookup: turn
+    examples: |
+      - mañana
+      - tarde
+
   - intent: inform_professional_families
     examples: |
       - ¿Qué familias profesionales hay en el instituto?
@@ -79,16 +84,26 @@ nlu:
       - ¿Qué [documentos](scholarship_subject) necesito para aplicar?
       - ¿Cuándo termina el [plazo](scholarship_subject) para solicitar la beca?
 
+  - lookup: scholarship_subject
+    examples: |
+      - documentación
+      - documentos
+      - papeles
+      - requisitos
+      - plazo
+      - tiempo
+      - periodo
+
   - intent: inform_enrollment
     examples: |
-      - ¿Qué [documentos](subject) necesito para inscribirme?
-      - ¿Cuál es el [plazo](subject) de inscripción?
-      - ¿Cómo me puedo matricular? [documentos](subject)
-      - ¿Hasta cuando hay de [plazo](subject) para apuntarme?
-      - Necesito saber los [documentos](subject) para la matrícula.
-      - ¿Cuándo se cierra el [plazo](subject) de inscripción?
-      - ¿Cuándo se abre el [plazo](subject) para apuntarse?
-      - ¿Qué día empieza la matrícula? [plazo](subject)
+      - ¿Qué [documentos](enrollment_subject) necesito para inscribirme?
+      - ¿Cuál es el [plazo](enrollment_subject) de inscripción?
+      - ¿Cómo me puedo matricular? [documentos](enrollment_subject)
+      - ¿Hasta cuando hay de [plazo](enrollment_subject) para apuntarme?
+      - Necesito saber los [documentos](enrollment_subject) para la matrícula.
+      - ¿Cuándo se cierra el [plazo](enrollment_subject) de inscripción?
+      - ¿Cuándo se abre el [plazo](enrollment_subject) para apuntarse?
+      - ¿Qué día empieza la matrícula? [plazo](enrollment_subject)
 
   - intent: inform_access_requirements
     examples: |

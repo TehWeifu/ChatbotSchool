@@ -53,11 +53,11 @@ class ActionScholarship(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        subject = next(tracker.get_latest_entity_values("scholarship_subject"), None)
+        scholarship_subject = next(tracker.get_latest_entity_values("scholarship_subject"), None)
 
-        if subject == "documentos":
+        if scholarship_subject in ["documentos", "documentación", "papeles", "requisitos"]:
             message = "Para la beca, necesitas tu DNI, certificado de notas, y el formulario de solicitud completado."
-        elif subject == "plazo":
+        elif scholarship_subject in ["plazo", "tiempo", "periodo"]:
             message = "El plazo para solicitar becas termina el 30 de septiembre."
         else:
             message = ("Puedo proporcionarte información sobre la documentación necesaria y los plazos para las becas. "
@@ -73,13 +73,13 @@ class ActionEnrollment(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        subject = next(tracker.get_latest_entity_values("enrollment_subject"), None)
+        enrollment_subject = next(tracker.get_latest_entity_values("enrollment_subject"), None)
 
-        if subject == "documentos":
+        if enrollment_subject == "documentos":
             message = ("Para inscribirte, necesitas tu DNI, el certificado de estudios anteriores, y el formulario de "
                        "inscripción completado.")
             follow_up = "deadline"
-        elif subject == "plazo":
+        elif enrollment_subject == "plazo":
             message = "El plazo de inscripción para nuevos estudiantes termina el 30 de julio."
             follow_up = "documentation"
         else:

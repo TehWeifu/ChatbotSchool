@@ -75,11 +75,11 @@ stories:
       - action: utter_greet
       - intent: inform_enrollment
         entities:
-          - subject: "documentación"
+          - enrollment_subject: "documentación"
       - action: action_enrollment
       - intent: inform_enrollment
         entities:
-          - subject: "plazo"
+          - enrollment_subject: "plazo"
       - action: action_enrollment
       - intent: goodbye
       - action: utter_goodbye
