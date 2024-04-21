@@ -29,6 +29,9 @@ responses:
     - text: "Lo siento, no entendí tu pregunta. ¿Podrías repetirlo?"
 
   utter_default:
+    - text: "Lo siento, no he comprendido tu mensaje. ¿Podrías repetirlo?"
+
+  utter_out_of_scope:
     - text: "Lo siento, no tengo información sobre eso. ¿Puedo ayudarte con algo más?"
 
 entities:

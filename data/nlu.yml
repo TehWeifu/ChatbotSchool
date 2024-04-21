@@ -24,7 +24,6 @@ nlu:
       - Gracias
       - Gracias por la ayuda
 
-
   - intent: inform_cancellation
     examples: |
       - ¿Cómo puedo renunciar una convocatoria?
@@ -101,3 +100,13 @@ nlu:
       - ¿Cuáles son los requisitos de acceso para [Grado Superior](education_level)?
       - Dime cómo puedo acceder a [Grado Medio](education_level).
       - Quiero inscribirme en [Grado Superior](education_level).
+
+  - intent: out_of_scope
+    examples: |
+      - ¿Cuál es el horario de atención al público?
+      - ¿Cuál es el teléfono de contacto?
+      - ¿Cuál es la dirección del instituto?
+      - ¿Cuál es el correo electrónico de contacto?
+      - ¿Cuál es el horario de secretaría?
+      - ¿Cuál es el horario de apertura?
+      - ¿Cuál es el horario de cierre?
