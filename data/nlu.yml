@@ -105,6 +105,16 @@ nlu:
       - ¿Cuándo se abre el [plazo](enrollment_subject) para apuntarse?
       - ¿Qué día empieza la matrícula? [plazo](enrollment_subject)
 
+  - lookup: enrollment_subject
+    examples: |
+      - documentación
+      - documentos
+      - papeles
+      - requisitos
+      - plazo
+      - tiempo
+      - periodo
+
   - intent: inform_access_requirements
     examples: |
       - ¿Cuáles son los requisitos de acceso para [Grado Medio](education_level)?
@@ -115,6 +125,17 @@ nlu:
       - ¿Cuáles son los requisitos de acceso para [Grado Superior](education_level)?
       - Dime cómo puedo acceder a [Grado Medio](education_level).
       - Quiero inscribirme en [Grado Superior](education_level).
+
+  - lookup: education_level
+    examples: |
+      - Grado medio
+      - FP medio
+      - Ciclo formativo de grado medio
+      - CFGM
+      - Grado superior
+      - FP superior
+      - Ciclo formativo de grado superior
+      - CFGS
 
   - intent: out_of_scope
     examples: |

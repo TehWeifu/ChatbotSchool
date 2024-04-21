@@ -75,11 +75,11 @@ class ActionEnrollment(Action):
 
         enrollment_subject = next(tracker.get_latest_entity_values("enrollment_subject"), None)
 
-        if enrollment_subject == "documentos":
+        if enrollment_subject in ["documentos", "documentación", "papeles", "requisitos"]:
             message = ("Para inscribirte, necesitas tu DNI, el certificado de estudios anteriores, y el formulario de "
                        "inscripción completado.")
             follow_up = "deadline"
-        elif enrollment_subject == "plazo":
+        elif enrollment_subject in ["plazo", "tiempo", "periodo"]:
             message = "El plazo de inscripción para nuevos estudiantes termina el 30 de julio."
             follow_up = "documentation"
         else:
@@ -100,10 +100,10 @@ class ActionProvideAccessRequirements(Action):
 
         education_level = next(tracker.get_latest_entity_values("education_level"), None)
 
-        if education_level == "Grado Medio":
+        if education_level in ["Grado medio", "FP medio", "Ciclo formativo de grado medio", "CFGM"]:
             message = ("Para acceder a Grado Medio necesitas tener el título de ESO o haber superado la prueba de "
                        "acceso.")
-        elif education_level == "Grado Superior":
+        elif education_level in ["Grado superior", "FP superior", "Ciclo formativo de grado superior", "CFGS"]:
             message = "Para Grado Superior es necesario tener el título de Bachillerato o superar la prueba de acceso."
         else:
             message = ("Puedo informarte sobre los requisitos de acceso para Grado Medio y Grado Superior. ¿Cuál te "
