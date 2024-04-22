@@ -7,11 +7,12 @@
 
 import csv
 from typing import Any, Text, Dict, List
-import pandas as pd
 
+import pandas as pd
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
+from tabulate import tabulate
 
 
 class ActionProfessionalFamilies(Action):
@@ -119,7 +120,7 @@ class ActionGiveItModule(Action):
         return "action_give_it_module"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        df_modules = pd.read_csv('external_data/Groups.csv', encoding='utf-8')
+        df_modules = pd.read_csv('external_data/Groups.csv', encoding='utf-8', sep=';')
         list_unique_modules = df_modules['Nombre'].unique().tolist()
 
         response = f"Aquí están los módulos de informática disponibles:\n {', '.join(list_unique_modules)}"
@@ -141,7 +142,7 @@ class ActionGiveItModuleTurns(Action):
 
         it_module = tracker.get_slot('it_module')
 
-        df_modules = pd.read_csv('external_data/Groups.csv', encoding='utf-8')
+        df_modules = pd.read_csv('external_data/Groups.csv', encoding='utf-8', sep=';')
         module_turn = df_modules[df_modules['Nombre'] == it_module]['Turno'].values[0]
 
         response = f"El módulo {it_module} se imparte en el turno de {turns[module_turn]}"
@@ -155,15 +156,17 @@ class ActionGiveItModuleSubjects(Action):
         return "action_give_it_module_subjects"
 
     def run(self, dispatcher, tracker, domain):
-        it_module = tracker.get_slot('module_name')
+        it_module = tracker.get_slot('it_module')
 
-        df_modules = pd.read_csv('external_data/Groups.csv', encoding='utf-8')
+        df_modules = pd.read_csv('external_data/Groups.csv', encoding='utf-8', sep=';')
         module_code = df_modules[df_modules['Nombre'] == it_module]['Grupo'].values[0]
 
-        df_subjects = pd.read_csv('external_data/Modules.csv', encoding='utf-8')
-        subjects = df_subjects[df_subjects['Cod_Modulo'] == module_code]['Nom_Cas_Modulo'].values.tolist()
+        df_subjects = pd.read_csv('external_data/Modules.csv', encoding='utf-8', sep=';')
+        modules_subjects_and_hours = df_subjects[df_subjects['Grupo'] == module_code][
+            ['Nom_Cas_Modulo', 'HORAS']].values.tolist()
 
-        response = f"Las asignaturas del módulo {it_module} son: {', '.join(subjects)}"
+        subjects_formatted = tabulate(modules_subjects_and_hours, headers=['Asignatura', 'Horas'], tablefmt='pretty')
+        response = f"Las asignaturas del módulo {it_module} son:\n{subjects_formatted}"
 
         dispatcher.utter_message(text=response)
         return []

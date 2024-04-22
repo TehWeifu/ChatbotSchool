@@ -175,16 +175,8 @@ nlu:
     examples: |
       - Repite el módulo
       - Repite el módulo de informática
-      - Repite el módulo por favor
       - Repite el módulo de informática por favor
       - Repite el módulo de informática otra vez
-      - Repite el módulo otra vez
-      - Repite el módulo de informática de nuevo
-      - Repite el módulo de nuevo
-      - Repite el módulo de informática otra vez por favor
-      - Repite el módulo otra vez por favor
-      - Repite el módulo de informática de nuevo por favor
-      - Repite el módulo de nuevo por favor
       - ¿Qué módulo era?
       - ¿Cuál era el módulo?
       - ¿Cuál era el módulo de informática?
