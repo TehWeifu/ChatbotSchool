@@ -54,6 +54,7 @@ entities:
   - scholarship_subject
   - enrollment_subject
   - education_level
+  - it_module
 
 actions:
   - action_professional_families

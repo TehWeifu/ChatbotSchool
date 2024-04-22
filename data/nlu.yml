@@ -26,7 +26,7 @@ nlu:
 
   - intent: inform_cancellation
     examples: |
-      - ¿Cómo puedo renunciar una convocatoria?
+      - ¿Cómo puedo renunciar a una convocatoria?
       - ¿Hasta cuándo puedo cancelar un examen?
       - ¿Cuál es el plazo para anular la convocatoria?
       - Necesito información para cancelar mi convocatoria.
