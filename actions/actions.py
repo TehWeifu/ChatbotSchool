@@ -1,10 +1,3 @@
-# This files contains your custom actions which can be used to run
-# custom Python code.
-#
-# See this guide on how to implement these action:
-# https://rasa.com/docs/rasa/custom-actions
-
-
 import csv
 from typing import Any, Text, Dict, List
 
@@ -15,6 +8,9 @@ from rasa_sdk.executor import CollectingDispatcher
 from tabulate import tabulate
 
 
+# Single response #
+
+# Professional families
 class ActionProfessionalFamilies(Action):
     def name(self) -> Text:
         return "action_professional_families"
@@ -30,6 +26,7 @@ class ActionProfessionalFamilies(Action):
         return []
 
 
+# Schedule
 class ActionSchedule(Action):
     def name(self) -> Text:
         return "action_schedule"
@@ -49,6 +46,9 @@ class ActionSchedule(Action):
         return []
 
 
+# Extended response
+
+# Scholarships
 class ActionScholarship(Action):
     def name(self) -> Text:
         return "action_scholarship"
@@ -69,6 +69,7 @@ class ActionScholarship(Action):
         return []
 
 
+# Enrollment
 class ActionEnrollment(Action):
     def name(self) -> Text:
         return "action_enrollment"
@@ -94,6 +95,7 @@ class ActionEnrollment(Action):
         return [SlotSet("enrollment_subject", follow_up)] if follow_up else []
 
 
+# Access requirements
 class ActionProvideAccessRequirements(Action):
     def name(self) -> Text:
         return "action_access_requirements"
@@ -115,6 +117,8 @@ class ActionProvideAccessRequirements(Action):
         return []
 
 
+# Multiple responses
+# IT offer
 class ActionGiveItModule(Action):
     def name(self) -> Text:
         return "action_give_it_module"
