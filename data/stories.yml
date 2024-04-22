@@ -106,7 +106,7 @@ stories:
       - intent: goodbye
       - action: utter_goodbye
 
-  - story: It module story
+  - story: It module story simple
     steps:
       - intent: inform_it_module
       - action: it_form
@@ -114,7 +114,7 @@ stories:
       - slot_was_set:
           - requested_slot: it_module
       - slot_was_set:
-          - it_module: "DAW"
+          - it_module: DAW
       - slot_was_set:
           - requested_slot: null
       - active_loop: null
@@ -141,3 +141,18 @@ stories:
           - requested_slot: null
       - active_loop: null
       - action: utter_goodbye
+
+  - story: IT module full 1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: inform_it_module
+      - action: action_give_it_module
+      - action: it_form
+      - active_loop: it_form
+      - slot_was_set:
+          - it_module: DAW
+      - intent: inform_it_module_turn
+      - action: action_give_it_module_turns
+      - intent: inform_it_module_subjects
+      - action: action_give_it_module_subjects

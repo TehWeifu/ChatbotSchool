@@ -16,6 +16,8 @@ intents:
   - deny
   - inform_it_module
   - repeat_it_module
+  - inform_it_module_turn
+  - inform_it_module_subjects
 
 responses:
   utter_greet:
@@ -63,6 +65,8 @@ actions:
   - action_enrollment
   - action_access_requirements
   - action_give_it_module
+  - action_give_it_module_turns
+  - action_give_it_module_subjects
 
 forms:
   it_form:

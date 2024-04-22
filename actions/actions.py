@@ -7,6 +7,7 @@
 
 import csv
 from typing import Any, Text, Dict, List
+import pandas as pd
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet
@@ -118,15 +119,51 @@ class ActionGiveItModule(Action):
         return "action_give_it_module"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        df_modules = pd.read_csv('external_data/Groups.csv', encoding='utf-8')
+        list_unique_modules = df_modules['Nombre'].unique().tolist()
 
-        module = next(tracker.get_latest_entity_values("it_module"), None)
+        response = f"Aquí están los módulos de informática disponibles:\n {', '.join(list_unique_modules)}"
 
-        if module in ["programación", "informática"]:
-            message = "El módulo de programación se imparte en el primer curso de Grado Superior de Desarrollo de Aplicaciones Multiplataforma."
-        elif module in ["electricidad", "electrónica"]:
-            message = "El módulo de electricidad se imparte en el primer curso de Grado Medio de Instalaciones Eléctricas y Automáticas."
-        else:
-            message = "No tengo información sobre ese módulo. ¿Te interesa algún otro?"
+        dispatcher.utter_message(text=response)
+        return []
 
-        dispatcher.utter_message(text=message)
+
+class ActionGiveItModuleTurns(Action):
+
+    def name(self):
+        return "action_give_it_module_turns"
+
+    def run(self, dispatcher, tracker, domain):
+        turns = {
+            "D": "Diurno (Presencial)",
+            "T": "Tarde (Presencial)"
+        }
+
+        it_module = tracker.get_slot('it_module')
+
+        df_modules = pd.read_csv('external_data/Groups.csv', encoding='utf-8')
+        module_turn = df_modules[df_modules['Nombre'] == it_module]['Turno'].values[0]
+
+        response = f"El módulo {it_module} se imparte en el turno de {turns[module_turn]}"
+
+        dispatcher.utter_message(text=response)
+        return []
+
+
+class ActionGiveItModuleSubjects(Action):
+    def name(self):
+        return "action_give_it_module_subjects"
+
+    def run(self, dispatcher, tracker, domain):
+        it_module = tracker.get_slot('module_name')
+
+        df_modules = pd.read_csv('external_data/Groups.csv', encoding='utf-8')
+        module_code = df_modules[df_modules['Nombre'] == it_module]['Grupo'].values[0]
+
+        df_subjects = pd.read_csv('external_data/Modules.csv', encoding='utf-8')
+        subjects = df_subjects[df_subjects['Cod_Modulo'] == module_code]['Nom_Cas_Modulo'].values.tolist()
+
+        response = f"Las asignaturas del módulo {it_module} son: {', '.join(subjects)}"
+
+        dispatcher.utter_message(text=response)
         return []

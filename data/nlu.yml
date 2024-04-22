@@ -201,3 +201,32 @@ nlu:
       - Quiero aprender informática
       - Quiero aprender a programar
       - Quiero estudiar programación
+
+  - intent: inform_it_module_turn
+    examples: |
+      - ¿Qué turno tiene el módulo de [DAW](it_module)?
+      - ¿A qué hora se imparte el módulo de [ASIR](it_module)?
+      - ¿Cuándo se estudia el módulo de [SMR_A](it_module)?
+      - ¿Qué horario tiene el módulo de [S.M.X.](it_module)?
+      - ¿Cuándo empiezan las clases de [CIBER](it_module)?
+      - ¿A qué hora terminan las clases de [IABIG](it_module)?
+      - ¿Cuál es el horario del módulo de [DAW](it_module)?
+
+  - intent: inform_it_module_subjects
+    examples: |
+      - ¿Qué asignaturas tiene el módulo de [DAW](it_module)?
+      - ¿Cuáles son las materias del módulo de [ASIR](it_module)?
+      - ¿Qué se estudia en el módulo de [SMR_A](it_module)?
+      - ¿Qué temas se tratan en el módulo de [S.M.X.](it_module)?
+      - ¿Qué se aprende en el módulo de [CIBER](it_module)?
+      - ¿Qué contenidos se imparten en el módulo de [IABIG](it_module)?
+      - ¿Cuáles son las asignaturas del módulo de [DAW](it_module)?
+
+  - lookup: it_module
+    examples: |
+      - DAW
+      - SMR_A
+      - ASIR
+      - S.M.X.
+      - CIBER
+      - IABIG
