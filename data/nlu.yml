@@ -225,10 +225,13 @@ nlu:
 
   - intent: stop_it_form
     examples: |
-      - Sí, paramos
-      - Sí, detenemos
-      - Sí, cancelamos
-      - Sí, parate
+      - me voy
+      - no quiero continuar
+      - no quiero seguir
+      - no quiero más
+      - no quiero más información
+      - no quiero más ayuda
+      - cambia de tema
 
   - intent: repeat_it_module
     examples: |
