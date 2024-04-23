@@ -118,8 +118,6 @@ stories:
       - slot_was_set:
           - requested_slot: null
       - active_loop: null
-      - action: utter_ask_it_module
-      - intent: repeat_it_module
       - action: action_give_it_module
       - intent: goodbye
       - action: utter_goodbye

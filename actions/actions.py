@@ -175,3 +175,16 @@ class ActionGiveItModuleSubjects(Action):
 
         dispatcher.utter_message(text=response)
         return []
+
+
+class ActiveRepeatItModule(Action):
+    def name(self):
+        return "action_repeat_it_module"
+
+    def run(self, dispatcher, tracker, domain):
+        it_module = tracker.get_slot('it_module')
+
+        response = f"El módulo de informática seleccionado es: {it_module}"
+
+        dispatcher.utter_message(text=response)
+        return []
