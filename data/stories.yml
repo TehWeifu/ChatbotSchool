@@ -250,23 +250,23 @@ stories:
           - it_module: DAW
       - action: action_give_it_module_turns
 
-- story: interactive_story_1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: inform_it_module
-  - action: action_give_it_module
-  - action: it_form
-  - active_loop: it_form
-  - slot_was_set:
-    - requested_slot: it_module
-  - intent: inform_it_module_turn
-    entities:
-    - it_module: DAW
-  - slot_was_set:
-    - it_module: DAW
-  - action: it_form
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_give_it_module_turns
+  - story: interactive_story_5
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: inform_it_module
+    - action: action_give_it_module
+    - action: it_form
+    - active_loop: it_form
+    - slot_was_set:
+      - requested_slot: it_module
+    - intent: inform_it_module_turn
+      entities:
+      - it_module: DAW
+    - slot_was_set:
+      - it_module: DAW
+    - action: it_form
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_give_it_module_turns
