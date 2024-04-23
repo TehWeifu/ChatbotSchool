@@ -1,246 +1,212 @@
 version: "3.1"
 nlu:
-  #  Generic
-
-  - intent: greet
-    examples: |
-      - Hola
-      - Hey
-      - Buenos días
-      - Buenas tardes
-      - Buenas noches
-      - Buenas
-      - ¿Qué tal?
-
-  - intent: goodbye
-    examples: |
-      - Adiós
-      - Hasta luego
-      - Nos vemos
-      - Hasta la próxima
-      - Chao
-      - Hasta pronto
-      - Hasta mañana
-      - Hasta la vista
-      - Bye
-      - Gracias
-      - Gracias por la ayuda
-
-  - intent: out_of_scope
-    examples: |
-      - ¿Cuál es el horario de atención al público?
-      - ¿Cuál es el teléfono de contacto?
-      - ¿Cuál es la dirección del instituto?
-      - ¿Cuál es el correo electrónico de contacto?
-      - ¿Cuál es el horario de secretaría?
-      - ¿Cuál es el horario de apertura?
-      - ¿Cuál es el horario de cierre?
-
-  #  Single response
-
-  # Cancellation
-  - intent: inform_cancellation
-    examples: |
-      - ¿Cómo puedo renunciar a una convocatoria?
-      - ¿Hasta cuándo puedo cancelar un examen?
-      - ¿Cuál es el plazo para anular la convocatoria?
-      - Necesito información para cancelar mi convocatoria.
-      - ¿Cuál es el último día para anular una convocatoria?
-      - ¿Cuáles son los plazos para renunciar a los exámenes?
-      - ¿Hasta cuándo puedo renunciar mi convocatoria?
-      - ¿Cuándo se cierra el plazo para cancelar las convocatorias?
-      - Quiero cancelar una convocatoria.
-      - Necesito anular un examen.
-
-  # Certificates
-  - intent: inform_certificates
-    examples: |
-      - ¿Cuándo puedo recoger mi certificado?
-      - Información sobre la recogida de certificados.
-      - ¿Dónde y cuándo recoger mi certificado?
-      - ¿Cuándo me dan el título?
-      - ¿Cuál es el plazo para recoger el certificado?
-      - ¿Cuándo puedo pasar a recoger mi certificado?
-      - ¿Cuanto tengo que esperar para recoger mi título?
-      - ¿Dónde puedo recoger mi certificado de estudios?
-      - ¿Cuándo estarán disponibles los certificados?
-
-  # Schedule
-  - intent: inform_schedule
-    examples: |
-      - ¿Cuál es el horario de clases por la [mañana](turn)?
-      - ¿A qué hora empiezan las clases de la [tarde](turn)?
-      - ¿Cuándo terminan las clases de la [tarde](turn)?
-      - Dime los horarios de clases por la [mañana](turn).
-      - ¿Qué horario tienen las clases de la [tarde](turn)?
-
-  - lookup: turn
-    examples: |
-      - mañana
-      - manana
-      - tarde
-
-  # Professional families
-  - intent: inform_professional_families
-    examples: |
-      - ¿Qué familias profesionales hay en el instituto?
-      - ¿Qué ciclos formativos ofrecéis?
-      - ¿Qué puedo estudiar?
-      - ¿Cuáles son las familias profesionales disponibles?
-      - ¿Qué estudios puedo cursar en el instituto?
-      - Me gustaría saber más sobre las familias profesionales disponibles.
-      - ¿Qué opciones de estudio tengo en el instituto?
-      - ¿Qué ciclos formativos puedo estudiar en el instituto?
-
-  # Extended response
-
-  # Enrollment
-  - intent: inform_enrollment
-    examples: |
-      - ¿Qué [documentos](enrollment_subject) necesito para inscribirme?
-      - ¿Cuál es el [plazo](enrollment_subject) de inscripción?
-      - ¿Cómo me puedo matricular? [documentos](enrollment_subject)
-      - ¿Hasta cuando hay de [plazo](enrollment_subject) para apuntarme?
-      - Necesito saber los [documentos](enrollment_subject) para la matrícula.
-      - ¿Cuándo se cierra el [plazo](enrollment_subject) de inscripción?
-      - ¿Cuándo se abre el [plazo](enrollment_subject) para apuntarse?
-      - ¿Qué día empieza la matrícula? [plazo](enrollment_subject)
-
-  - lookup: enrollment_subject
-    examples: |
-      - documentación
-      - documentos
-      - papeles
-      - requisitos
-      - plazo
-      - tiempo
-      - periodo
-
-  # Scholarships
-  - intent: inform_scholarships
-    examples: |
-      - ¿Cuándo se pide la beca? [plazo](scholarship_subject)
-      - ¿Cuál es el [plazo](scholarship_subject) para las becas?
-      - Dime la [documentos](scholarship_subject) necesaria para las becas.
-      - ¿Qué [documentos](scholarship_subject) necesito para solicitar la beca?
-      - ¿Hasta cuándo puedo solicitar la beca? [plazo](scholarship_subject)
-      - ¿Cuándo se cierra el [plazo](scholarship_subject) para solicitar la beca?
-      - ¿Qué [documentos](scholarship_subject) necesito para aplicar?
-      - ¿Cuándo termina el [plazo](scholarship_subject) para solicitar la beca?
-
-  - lookup: scholarship_subject
-    examples: |
-      - documentación
-      - documentos
-      - papeles
-      - requisitos
-      - plazo
-      - tiempo
-      - periodo
-
-  # Access requirements
-  - intent: inform_access_requirements
-    examples: |
-      - ¿Cuáles son los requisitos de acceso para [Grado Medio](education_level)?
-      - Quiero saber sobre la admisión a [Grado Superior](education_level).
-      - ¿Qué necesito para inscribirme en [Grado Medio](education_level)?
-      - Dime los requisitos para [Grado Superior](education_level).
-      - ¿Qué necesito para acceder a [Grado Medio](education_level)?
-      - ¿Cuáles son los requisitos de acceso para [Grado Superior](education_level)?
-      - Dime cómo puedo acceder a [Grado Medio](education_level).
-      - Quiero inscribirme en [Grado Superior](education_level).
-
-  - lookup: education_level
-    examples: |
-      - Grado medio
-      - FP medio
-      - Ciclo formativo de grado medio
-      - CFGM
-      - Grado superior
-      - FP superior
-      - Ciclo formativo de grado superior
-      - CFGS
-  
-
-  # Multiple response
-
-  # IT offer
-
-  - intent: inform_it_module
-    examples: |
-      - ¿Qué módulos de informática tenéis?
-      - ¿Cuál es el módulo de informática?
-      - ¿Qué módulos de informática ofrecéis?
-      - ¿Cuál es el módulo de informática que imparten?
-      - ¿Se puede estudiar programación en vuestro instituto?
-      - ¿Qué módulos de informática hay disponibles?
-      - ¿Cuál es el módulo de informática que se estudia?
-      - Quiero estudiar informática
-      - Quiero aprender informática
-      - Quiero aprender a programar
-      - Quiero estudiar programación
-
-  - intent: inform_it_module_turn
-    examples: |
-      - ¿Qué turno tiene el módulo de [DAW](it_module)?
-      - ¿A qué hora se imparte el módulo de [ASIR](it_module)?
-      - ¿Cuándo se estudia el módulo de [SMR_A](it_module)?
-      - ¿Qué horario tiene el módulo de [S.M.X.](it_module)?
-      - ¿Cuándo empiezan las clases de [CIBER](it_module)?
-      - ¿A qué hora terminan las clases de [IABIG](it_module)?
-      - ¿Cuál es el horario del módulo de [DAW](it_module)?
-
-  - intent: inform_it_module_subjects
-    examples: |
-      - ¿Qué asignaturas tiene el módulo de [DAW](it_module)?
-      - ¿Cuáles son las materias del módulo de [ASIR](it_module)?
-      - ¿Qué se estudia en el módulo de [SMR_A](it_module)?
-      - ¿Qué temas se tratan en el módulo de [S.M.X.](it_module)?
-      - ¿Qué se aprende en el módulo de [CIBER](it_module)?
-      - ¿Qué contenidos se imparten en el módulo de [IABIG](it_module)?
-      - ¿Cuáles son las asignaturas del módulo de [DAW](it_module)?    
-
-  - lookup: it_module
-    examples: |
-      - DAW
-      - SMR_A
-      - ASIR
-      - S.M.X.
-      - CIBER
-      - IABIG
-
-  - intent: affirm
-    examples: |
-      - Sí
-      - Claro
-      - Por supuesto
-      - Vale
-      - Correcto
-
-  - intent: deny
-    examples: |
-      - No
-      - No, gracias
-      - No, no es necesario
-      - No, no lo necesito
-      - No, no me interesa
-
-  - intent: stop_it_form
-    examples: |
-      - me voy
-      - no quiero continuar
-      - no quiero seguir
-      - no quiero más
-      - no quiero más información
-      - no quiero más ayuda
-      - cambia de tema
-
-  - intent: repeat_it_module
-    examples: |
-      - Repite el módulo
-      - Repite el módulo de informática
-      - Repite el módulo de informática por favor
-      - Repite el módulo de informática otra vez
-      - ¿Qué módulo era?
-      - ¿Cuál era el módulo?
-      - ¿Cuál era el módulo de informática?
+- intent: greet
+  examples: |
+    - Hola
+    - Hey
+    - Buenos días
+    - Buenas tardes
+    - Buenas noches
+    - Buenas
+    - ¿Qué tal?
+    - hola
+- intent: goodbye
+  examples: |
+    - Adiós
+    - Hasta luego
+    - Nos vemos
+    - Hasta la próxima
+    - Chao
+    - Hasta pronto
+    - Hasta mañana
+    - Hasta la vista
+    - Bye
+    - Gracias
+    - Gracias por la ayuda
+    - adiós
+- intent: out_of_scope
+  examples: |
+    - ¿Cuál es el horario de atención al público?
+    - ¿Cuál es el teléfono de contacto?
+    - ¿Cuál es la dirección del instituto?
+    - ¿Cuál es el correo electrónico de contacto?
+    - ¿Cuál es el horario de secretaría?
+    - ¿Cuál es el horario de apertura?
+    - ¿Cuál es el horario de cierre?
+- intent: inform_cancellation
+  examples: |
+    - ¿Cómo puedo renunciar a una convocatoria?
+    - ¿Hasta cuándo puedo cancelar un examen?
+    - ¿Cuál es el plazo para anular la convocatoria?
+    - Necesito información para cancelar mi convocatoria.
+    - ¿Cuál es el último día para anular una convocatoria?
+    - ¿Cuáles son los plazos para renunciar a los exámenes?
+    - ¿Hasta cuándo puedo renunciar mi convocatoria?
+    - ¿Cuándo se cierra el plazo para cancelar las convocatorias?
+    - Quiero cancelar una convocatoria.
+    - Necesito anular un examen.
+- intent: inform_certificates
+  examples: |
+    - ¿Cuándo puedo recoger mi certificado?
+    - Información sobre la recogida de certificados.
+    - ¿Dónde y cuándo recoger mi certificado?
+    - ¿Cuándo me dan el título?
+    - ¿Cuál es el plazo para recoger el certificado?
+    - ¿Cuándo puedo pasar a recoger mi certificado?
+    - ¿Cuanto tengo que esperar para recoger mi título?
+    - ¿Dónde puedo recoger mi certificado de estudios?
+    - ¿Cuándo estarán disponibles los certificados?
+- intent: inform_schedule
+  examples: |
+    - ¿Cuál es el horario de clases por la [mañana](turn)?
+    - ¿A qué hora empiezan las clases de la [tarde](turn)?
+    - ¿Cuándo terminan las clases de la [tarde](turn)?
+    - Dime los horarios de clases por la [mañana](turn).
+    - ¿Qué horario tienen las clases de la [tarde](turn)?
+- intent: inform_professional_families
+  examples: |
+    - ¿Qué familias profesionales hay en el instituto?
+    - ¿Qué ciclos formativos ofrecéis?
+    - ¿Qué puedo estudiar?
+    - ¿Cuáles son las familias profesionales disponibles?
+    - ¿Qué estudios puedo cursar en el instituto?
+    - Me gustaría saber más sobre las familias profesionales disponibles.
+    - ¿Qué opciones de estudio tengo en el instituto?
+    - ¿Qué ciclos formativos puedo estudiar en el instituto?
+- intent: inform_enrollment
+  examples: |
+    - ¿Qué [documentos](enrollment_subject) necesito para inscribirme?
+    - ¿Cuál es el [plazo](enrollment_subject) de inscripción?
+    - ¿Cómo me puedo matricular? [documentos](enrollment_subject)
+    - ¿Hasta cuando hay de [plazo](enrollment_subject) para apuntarme?
+    - Necesito saber los [documentos](enrollment_subject) para la matrícula.
+    - ¿Cuándo se cierra el [plazo](enrollment_subject) de inscripción?
+    - ¿Cuándo se abre el [plazo](enrollment_subject) para apuntarse?
+    - ¿Qué día empieza la matrícula? [plazo](enrollment_subject)
+- intent: inform_scholarships
+  examples: |
+    - ¿Cuándo se pide la beca? [plazo](scholarship_subject)
+    - ¿Cuál es el [plazo](scholarship_subject) para las becas?
+    - Dime la [documentos](scholarship_subject) necesaria para las becas.
+    - ¿Qué [documentos](scholarship_subject) necesito para solicitar la beca?
+    - ¿Hasta cuándo puedo solicitar la beca? [plazo](scholarship_subject)
+    - ¿Cuándo se cierra el [plazo](scholarship_subject) para solicitar la beca?
+    - ¿Qué [documentos](scholarship_subject) necesito para aplicar?
+    - ¿Cuándo termina el [plazo](scholarship_subject) para solicitar la beca?
+- intent: inform_access_requirements
+  examples: |
+    - ¿Cuáles son los requisitos de acceso para [Grado Medio](education_level)?
+    - Quiero saber sobre la admisión a [Grado Superior](education_level).
+    - ¿Qué necesito para inscribirme en [Grado Medio](education_level)?
+    - Dime los requisitos para [Grado Superior](education_level).
+    - ¿Qué necesito para acceder a [Grado Medio](education_level)?
+    - ¿Cuáles son los requisitos de acceso para [Grado Superior](education_level)?
+    - Dime cómo puedo acceder a [Grado Medio](education_level).
+    - Quiero inscribirme en [Grado Superior](education_level).
+- intent: inform_it_module
+  examples: |
+    - ¿Qué módulos de informática tenéis?
+    - ¿Cuál es el módulo de informática?
+    - ¿Qué módulos de informática ofrecéis?
+    - ¿Cuál es el módulo de informática que imparten?
+    - ¿Se puede estudiar programación en vuestro instituto?
+    - ¿Qué módulos de informática hay disponibles?
+    - ¿Cuál es el módulo de informática que se estudia?
+    - Quiero estudiar informática
+    - Quiero aprender informática
+    - Quiero aprender a programar
+    - Quiero estudiar programación
+    - Se puede estudiar programación en vuestro instituto?
+- intent: inform_it_module_turn
+  examples: |
+    - ¿Qué turno tiene el módulo de [DAW](it_module)?
+    - ¿A qué hora se imparte el módulo de [ASIR](it_module)?
+    - ¿Cuándo se estudia el módulo de [SMR_A](it_module)?
+    - ¿Qué horario tiene el módulo de [S.M.X.](it_module)?
+    - ¿Cuándo empiezan las clases de [CIBER](it_module)?
+    - ¿A qué hora terminan las clases de [IABIG](it_module)?
+    - ¿Cuál es el horario del módulo de [DAW](it_module)?
+    - Qué turno tiene el módulo de [DAW](it_module)?
+- intent: inform_it_module_subjects
+  examples: |
+    - ¿Qué asignaturas tiene el módulo de [DAW](it_module)?
+    - ¿Cuáles son las materias del módulo de [ASIR](it_module)?
+    - ¿Qué se estudia en el módulo de [SMR_A](it_module)?
+    - ¿Qué temas se tratan en el módulo de [S.M.X.](it_module)?
+    - ¿Qué se aprende en el módulo de [CIBER](it_module)?
+    - ¿Qué contenidos se imparten en el módulo de [IABIG](it_module)?
+    - ¿Cuáles son las asignaturas del módulo de [DAW](it_module)?
+    - Qué asignaturas tiene el módulo de [DAW](it_module)?
+- intent: affirm
+  examples: |
+    - Sí
+    - Claro
+    - Por supuesto
+    - Vale
+    - Correcto
+- intent: deny
+  examples: |
+    - No
+    - No, gracias
+    - No, no es necesario
+    - No, no lo necesito
+    - No, no me interesa
+- intent: stop_it_form
+  examples: |
+    - me voy
+    - no quiero continuar
+    - no quiero seguir
+    - no quiero más
+    - no quiero más información
+    - no quiero más ayuda
+    - cambia de tema
+- intent: repeat_it_module
+  examples: |
+    - Repite el módulo
+    - Repite el módulo de informática
+    - Repite el módulo de informática por favor
+    - Repite el módulo de informática otra vez
+    - ¿Qué módulo era?
+    - ¿Cuál era el módulo?
+    - ¿Cuál era el módulo de informática?
+- lookup: turn
+  examples: |
+    - mañana
+    - manana
+    - tarde
+- lookup: enrollment_subject
+  examples: |
+    - documentación
+    - documentos
+    - papeles
+    - requisitos
+    - plazo
+    - tiempo
+    - periodo
+- lookup: scholarship_subject
+  examples: |
+    - documentación
+    - documentos
+    - papeles
+    - requisitos
+    - plazo
+    - tiempo
+    - periodo
+- lookup: education_level
+  examples: |
+    - Grado medio
+    - FP medio
+    - Ciclo formativo de grado medio
+    - CFGM
+    - Grado superior
+    - FP superior
+    - Ciclo formativo de grado superior
+    - CFGS
+- lookup: it_module
+  examples: |
+    - DAW
+    - SMR_A
+    - ASIR
+    - S.M.X.
+    - CIBER
+    - IABIG

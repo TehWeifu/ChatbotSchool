@@ -1,108 +1,97 @@
-version: "3.1"
-
+version: '3.1'
 intents:
-  - greet
-  - goodbye
-  - nlu_fallback
-  - inform_cancellation
-  - inform_certificates
-  - inform_professional_families
-  - inform_schedule
-  - inform_scholarships
-  - inform_enrollment
-  - inform_access_requirements
-  - stop_it_form
-  - affirm
-  - deny
-  - inform_it_module
-  - repeat_it_module
-  - inform_it_module_turn
-  - inform_it_module_subjects
-
+- affirm
+- deny
+- goodbye
+- greet
+- inform_access_requirements
+- inform_cancellation
+- inform_certificates
+- inform_enrollment
+- inform_it_module
+- inform_it_module_subjects
+- inform_it_module_turn
+- inform_professional_families
+- inform_schedule
+- inform_scholarships
+- nlu_fallback
+- repeat_it_module
+- stop_it_form
 responses:
   utter_greet:
-    - text: "¡Hola! ¿En qué puedo ayudarte?"
-
+  - text: ¡Hola! ¿En qué puedo ayudarte?
   utter_goodbye:
-    - text: "¡Hasta luego! Que tengas un buen día."
-
+  - text: ¡Hasta luego! Que tengas un buen día.
   utter_repeat_prompt:
-    - text: "Lo siento, no entendí tu pregunta. ¿Podrías repetirlo?"
-
+  - text: Lo siento, no entendí tu pregunta. ¿Podrías repetirlo?
   utter_default:
-    - text: "Lo siento, no he comprendido tu mensaje. ¿Podrías repetirlo?"
-
+  - text: Lo siento, no he comprendido tu mensaje. ¿Podrías repetirlo?
   utter_out_of_scope:
-    - text: "Lo siento, no tengo información sobre eso. ¿Puedo ayudarte con algo más?"
-
+  - text: Lo siento, no tengo información sobre eso. ¿Puedo ayudarte con algo más?
   utter_inform_cancellation:
-    - text: "Para renunciar a una convocatoria, debes hacerlo entre el 1 de enero y el 30 de mayo. Por favor, visita secretaría para llevarla a cabo."
-
+  - text: Para renunciar a una convocatoria, debes hacerlo entre el 1 de enero y el 30 de mayo. Por favor, visita secretaría para llevarla a cabo.
   utter_inform_certificates:
-    - text: "Puedes recoger tu certificado de estudios a partir del 15 de julio en secretaría. Necesitas traer tu DNI y el recibo de pago de la tasa de expedición del título."
-
+  - text: Puedes recoger tu certificado de estudios a partir del 15 de julio en secretaría. Necesitas traer tu DNI y el recibo de pago de la tasa de expedición del título.
   utter_ask_it_module:
-    - text: "¿De qué módulo de informática necesitas información?"
-
+  - text: ¿De qué módulo de informática necesitas información?
   utter_continue_it_form:
-    - text: "¿Paramos la consulta del módulo de informática?"
-
+  - text: ¿Paramos la consulta del módulo de informática?
   utter_submit_it_form:
-    - text: "¡De acuerdo, apuntado!"
-
-
+  - text: ¡De acuerdo, apuntado!
 entities:
-  - turn
-  - scholarship_subject
-  - enrollment_subject
-  - education_level
-  - it_module
-
+- it_module
+- turn
+- scholarship_subject
+- enrollment_subject
+- education_level
 actions:
-  - action_professional_families
-  - action_schedule
-  - action_scholarship
-  - action_enrollment
-  - action_access_requirements
-  - action_give_it_module
-  - action_give_it_module_turns
-  - action_give_it_module_subjects
-
+- action_give_it_module_turns
+- action_give_it_module_subjects
+- utter_greet
+- action_give_it_module
+- utter_goodbye
+- action_professional_families
+- action_schedule
+- action_scholarship
+- action_enrollment
+- action_access_requirements
 forms:
   it_form:
     required_slots:
-      - it_module
-
+    - it_module
 slots:
   turn:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_entity
-        entity: turn
+    - type: from_entity
+      entity: turn
   scholarship_subject:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_entity
-        entity: scholarship_subject
+    - type: from_entity
+      entity: scholarship_subject
   enrollment_subject:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_entity
-        entity: enrollment_subject
+    - type: from_entity
+      entity: enrollment_subject
   education_level:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_entity
-        entity: education_level
+    - type: from_entity
+      entity: education_level
   it_module:
     type: text
     influence_conversation: true
     mappings:
-      - type: from_entity
-        entity: it_module
-        conditions:
-          - active_loop: it_form
+    - type: from_entity
+      entity: it_module
+      conditions:
+      - active_loop: it_form
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
