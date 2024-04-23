@@ -10,6 +10,7 @@ nlu:
     - Buenas
     - ¿Qué tal?
     - hola
+    - buenas tardes
 - intent: goodbye
   examples: |
     - Adiós
@@ -24,6 +25,7 @@ nlu:
     - Gracias
     - Gracias por la ayuda
     - adiós
+    - hasta luego
 - intent: out_of_scope
   examples: |
     - ¿Cuál es el horario de atención al público?
@@ -137,6 +139,7 @@ nlu:
     - ¿Qué contenidos se imparten en el módulo de [IABIG](it_module)?
     - ¿Cuáles son las asignaturas del módulo de [DAW](it_module)?
     - Qué asignaturas tiene el módulo de [DAW](it_module)?
+    - Qué se aprende en el módulo de [ASIR](it_module)?
 - intent: affirm
   examples: |
     - Sí

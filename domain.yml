@@ -45,11 +45,11 @@ entities:
 - enrollment_subject
 - education_level
 actions:
-- action_give_it_module_turns
+- action_give_it_module
 - action_give_it_module_subjects
 - utter_greet
-- action_give_it_module
 - utter_goodbye
+- action_give_it_module_turns
 - action_professional_families
 - action_schedule
 - action_scholarship
