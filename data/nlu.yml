@@ -119,6 +119,7 @@ nlu:
     - Quiero aprender a programar
     - Quiero estudiar programación
     - Se puede estudiar programación en vuestro instituto?
+    - Qué módulos de informática tenéis?
 - intent: inform_it_module_turn
   examples: |
     - ¿Qué turno tiene el módulo de [DAW](it_module)?
@@ -128,6 +129,8 @@ nlu:
     - ¿Cuándo empiezan las clases de [CIBER](it_module)?
     - ¿A qué hora terminan las clases de [IABIG](it_module)?
     - ¿Cuál es el horario del módulo de [DAW](it_module)?
+    - Qué turno tiene el módulo de [DAW](it_module)?
+    - En qué turno se puede estudiar el ciclo de [DAW](it_module)?
     - Qué turno tiene el módulo de [DAW](it_module)?
 - intent: inform_it_module_subjects
   examples: |

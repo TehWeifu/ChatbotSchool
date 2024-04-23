@@ -140,17 +140,21 @@ class ActionGiveItModuleTurns(Action):
         return "action_give_it_module_turns"
 
     def run(self, dispatcher, tracker, domain):
-        turns = {
-            "D": "Diurno (Presencial)",
-            "T": "Tarde (Presencial)"
-        }
+        try:
+            turns = {
+                "D": "Diurno (Presencial)",
+                "T": "Tarde (Presencial)"
+            }
 
-        it_module = tracker.get_slot('it_module')
+            it_module = tracker.get_slot('it_module')
 
-        df_modules = pd.read_csv('external_data/Groups.csv', encoding='utf-8', sep=';')
-        module_turn = df_modules[df_modules['Nombre'] == it_module]['Turno'].values[0]
+            df_modules = pd.read_csv('external_data/Groups.csv', encoding='utf-8', sep=';')
+            module_turn = df_modules[df_modules['Nombre'] == it_module]['Turno'].values[0]
 
-        response = f"El módulo {it_module} se imparte en el turno de {turns[module_turn]}"
+            response = f"El módulo {it_module} se imparte en el turno de {turns[module_turn]}"
+
+        except Exception as e:
+            response = "No se ha encontrado información para el módulo de informática seleccionado."
 
         dispatcher.utter_message(text=response)
         return []
@@ -161,17 +165,21 @@ class ActionGiveItModuleSubjects(Action):
         return "action_give_it_module_subjects"
 
     def run(self, dispatcher, tracker, domain):
-        it_module = tracker.get_slot('it_module')
+        try:
+            it_module = tracker.get_slot('it_module')
 
-        df_modules = pd.read_csv('external_data/Groups.csv', encoding='utf-8', sep=';')
-        module_code = df_modules[df_modules['Nombre'] == it_module]['Grupo'].values[0]
+            df_modules = pd.read_csv('external_data/Groups.csv', encoding='utf-8', sep=';')
+            module_code = df_modules[df_modules['Nombre'] == it_module]['Grupo'].values[0]
 
-        df_subjects = pd.read_csv('external_data/Modules.csv', encoding='utf-8', sep=';')
-        modules_subjects_and_hours = df_subjects[df_subjects['Grupo'] == module_code][
-            ['Nom_Cas_Modulo', 'HORAS']].values.tolist()
+            df_subjects = pd.read_csv('external_data/Modules.csv', encoding='utf-8', sep=';')
+            modules_subjects_and_hours = df_subjects[df_subjects['Grupo'] == module_code][
+                ['Nom_Cas_Modulo', 'HORAS']].values.tolist()
 
-        subjects_formatted = tabulate(modules_subjects_and_hours, headers=['Asignatura', 'Horas'], tablefmt='pretty')
-        response = f"Las asignaturas del módulo {it_module} son:\n{subjects_formatted}"
+            subjects_formatted = tabulate(modules_subjects_and_hours, headers=['Asignatura', 'Horas'],
+                                          tablefmt='pretty')
+            response = f"Las asignaturas del módulo {it_module} son:\n{subjects_formatted}"
+        except Exception as e:
+            response = "No se ha encontrado información para el módulo de informática seleccionado."
 
         dispatcher.utter_message(text=response)
         return []
