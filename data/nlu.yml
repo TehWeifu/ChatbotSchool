@@ -77,6 +77,7 @@ nlu:
   - lookup: turn
     examples: |
       - mañana
+      - manana
       - tarde
 
   # Professional families

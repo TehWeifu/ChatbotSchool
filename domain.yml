@@ -26,23 +26,23 @@ responses:
   utter_goodbye:
     - text: "¡Hasta luego! Que tengas un buen día."
 
-  utter_inform_cancellation:
-    - text: "Para renunciar a una convocatoria, debes hacerlo entre el 1 de enero y el 30 de mayo. Por favor, visita la secretaría la solicitud de renuncia para llevarla a cabo."
-
-  utter_inform_certificates:
-    - text: "Puedes recoger tu certificado de estudios a partir del 15 de julio en la secretaría. Necesitas traer tu DNI y el recibo de pago de la tasa de expedición del título."
-
   utter_repeat_prompt:
     - text: "Lo siento, no entendí tu pregunta. ¿Podrías repetirlo?"
-
-  utter_ask_it_module:
-    - text: "¿De qué módulo de informática necesitas información?"
 
   utter_default:
     - text: "Lo siento, no he comprendido tu mensaje. ¿Podrías repetirlo?"
 
   utter_out_of_scope:
     - text: "Lo siento, no tengo información sobre eso. ¿Puedo ayudarte con algo más?"
+
+  utter_inform_cancellation:
+    - text: "Para renunciar a una convocatoria, debes hacerlo entre el 1 de enero y el 30 de mayo. Por favor, visita secretaría para llevarla a cabo."
+
+  utter_inform_certificates:
+    - text: "Puedes recoger tu certificado de estudios a partir del 15 de julio en secretaría. Necesitas traer tu DNI y el recibo de pago de la tasa de expedición del título."
+
+  utter_ask_it_module:
+    - text: "¿De qué módulo de informática necesitas información?"
 
   utter_continue_it_form:
     - text: "¿Paramos la consulta del módulo de informática?"

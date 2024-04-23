@@ -19,11 +19,9 @@ pipeline:
   - name: LexicalSyntacticFeaturizer
   - name: EntitySynonymMapper
   - name: DIETClassifier
-    epochs: 100
+    epochs: 500
   - name: ResponseSelector
-    epochs: 100
-  #  - name: RegexEntityExtractor
-  #    use_lookup_tables: true
+    epochs: 500
   - name: FallbackClassifier
     threshold: 0.3
     ambiguity_threshold: 0.1
@@ -35,7 +33,7 @@ policies:
     max_history: 5
   - name: TEDPolicy
     max_history: 5
-    epochs: 100
+    epochs: 500
     constrain_similarities: true
   - name: RulePolicy
     core_fallback_threshold: 0.3
@@ -43,5 +41,5 @@ policies:
     enable_fallback_prediction: true
   - name: UnexpecTEDIntentPolicy
     max_history: 5
-    epochs: 100
+    epochs: 500
     constrain_similarities: true
